@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Clojure," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基本原理 客户和干系人都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量的投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要使用原生线程和加锁来面对涉及到并发的问题。C">
+<meta name="keywords" content="Clojure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clojure的基本原理">
+<meta property="og:url" content="http://glfruit.me/2012/01/05/clojure/index.html">
+<meta property="og:site_name" content="天地一沙鸥">
+<meta property="og:description" content="基本原理 客户和干系人都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量的投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要使用原生线程和加锁来面对涉及到并发的问题。Clojure就是在这样一种背景下所做的一个实用动态语言设计的努力。它致力于成为一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-28T09:52:31.125Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Clojure的基本原理">
+<meta name="twitter:description" content="基本原理 客户和干系人都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量的投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要使用原生线程和加锁来面对涉及到并发的问题。Clojure就是在这样一种背景下所做的一个实用动态语言设计的努力。它致力于成为一">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://glfruit.me/2012/01/05/clojure/"/>
+
+
+
+
+
+  <title>Clojure的基本原理 | 天地一沙鸥</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">天地一沙鸥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Just For Fun</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://glfruit.me/2012/01/05/clojure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fruit Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天地一沙鸥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Clojure的基本原理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-01-05T14:29:00+08:00">
+                2012-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">技术翻译</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基本原理</p>
+<p>客户和干系人都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量的投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要使用原生线程和加锁来面对涉及到并发的问题。Clojure就是在这样一种背景下所做的一个实用动态语言设计的努力。它致力于成为一种适用于Java所使用的那些领域。它反映出了未来的并发编程的事实，即，普遍的、不会减速的变化必然会到来。<br>Clojure通过以下几点来达到它的目的： </p>
+<ul>
+<li>拥抱行业标准的开发平台——JVM</li>
+<li>对一门值得尊敬的语言——Lisp进行现代化改造</li>
+<li>通过不变的持久化数据结构来鼓励函数式编程</li>
+<li>通过软件事务内存和异步代理提供内建的并发支持</li>
+</ul>
+<p>我们最终得到的是一个强健、实用而快速的结果。<br>为什么要使用Clojure？</p>
+<p>我为什么还要再编写一门程序语言？大体而言，因为我想要： </p>
+<ul>
+<li>一种Lisp</li>
+<li>函数式编程</li>
+<li>和一个已稳固确立的平台共生</li>
+<li>为并发而设计</li>
+</ul>
+<p>但是我却没有找到这样一种语言。下面是对Clojure背后的一些动机的概述： </p>
+<ul>
+<li>Lisp是个好东西</li>
+<li>经常被模仿/洗劫，但是仍未被复制</li>
+<li>Lambda演算导致一个非常小的核心</li>
+<li>几乎没有语法</li>
+<li>核心优势仍然是代码即数据以及语法抽象</li>
+<li>标准的Lisp（Common Lisp和Scheme）</li>
+<li>标准化之后缓慢/没有革新</li>
+<li>核心的数据结构是可变的，并且不可扩展</li>
+<li>规范中没有涉及到并发</li>
+<li>JVM上已经有了良好的实现（ABCL，Kawa，SISC等）</li>
+<li>标准的Lisp自身即是一个平台</li>
+</ul>
+<p>Clojure是一种没有向后兼容性约束的Lisp</p>
+<p>将“代码即数据”的范式推广到了map和vector</p>
+<p>默认数据是不可改变的</p>
+<p>核心的数据结构是可扩展的抽象</p>
+<p>拥抱了一个平台（JVM）</p>
+<p>函数式编程是个好东西</p>
+<p>数据不可变+函数为一等“公民”</p>
+<p>总是能够根据行规/惯例用Lisp完成</p>
+<p>但是如果数据结构是可变的，那么假设数据不会被改变是很危险的事情</p>
+<p>在传统的Lisp中，只有list数据结构在结构上才是可递归的</p>
+<p>纯粹的函数式语言总是倾向于强静态类型</p>
+<p>并非对每个人、每个任务都合适</p>
+<p>Clojure是一种强调动态性的函数式语言</p>
+<p>所有的数据都不可变&amp;可持久化，且支持递归</p>
+<p>不同类型的集合、返回类型</p>
+<p>动态的多态</p>
+<p>语言和平台</p>
+<p>虚拟机，而不是操作系统，才是未来的平台，它提供了：</p>
+<p>类型系统</p>
+<p>动态执行和安全性</p>
+<p>库</p>
+<p>抽象了OS</p>
+<p>大量的工具</p>
+<p>内建和第三方</p>
+<p>内存及其它资源管理</p>
+<p>GC是一个平台，而不是语言、工具</p>
+<p>字节码+JIT编译</p>
+<p>抽象了硬件</p>
+<p>语言即平台 vs 语言+平台</p>
+<p>老的方式——每种语言定义自己的运行时</p>
+<p>GC、字节码、类型系统、库等</p>
+<p>新的方式（JVM，.NET）</p>
+<p>独立于语言的通用运行时</p>
+<p>为平台构建的语言 vs 移植到平台的语言</p>
+<p>许多新的语言仍然采用“语言即平台”的方式</p>
+<p>移植时存在着 平台到平台的问题</p>
+<p>内存管理、类型系统、线程问题</p>
+<p>重复的库</p>
+<p>如果原来的语言基于C的话，一些用C写的扩展库并未移植过来</p>
+<p>平台是由客户指定的</p>
+<p>必须运行在JVM或.NET上 vs 必须运行在Unix或Windows上</p>
+<p>JVM已经建立了追踪记录和信任级别</p>
+<p>现在也已经开源了</p>
+<p>需要和其它代码交互</p>
+<p>现在光有C的连接是不够的</p>
+<p>Java/JVM是语言+平台</p>
+<p>Java</p>
+<p>Clojure是语言，JVM是平台</p>
+<p>OO被高估了</p>
+<p>起源于模仿，如今用于每个地方，即使不合适</p>
+<p>多态是个好东西</p>
+<p>Switch语句、结构匹配等导致脆弱的系统</p>
+<p>多态可以带来灵活的、可扩展的系统</p>
+<p>Clojure的多方法机制将多态与OO和类型分离开来</p>
+<p>支持多种分类</p>
+<p>通过静态、动态、外部属性、元数据等方式进行派发</p>
+<p>并发及多核未来</p>
+<p>不可变性让许多问题都消失了</p>
+<p>可以自由地在线程之间共享</p>
+<p>简而言之，我认为Clojure作为JVM上一种对并发有很强支持的、能够实际运行的Lisp占据了一个独特的位置。看看Clojure的一些特点。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Clojure/" rel="tag"># Clojure</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/01/03/hello2012/" rel="next" title="你好，2012！">
+                <i class="fa fa-chevron-left"></i> 你好，2012！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2012/01/20/jdeeemacs24/" rel="prev" title="终于让JDEE在Emacs 24上跑起来了">
+                终于让JDEE在Emacs 24上跑起来了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Fruit Lee</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/glfruit" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/glfruit" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fruit Lee</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
