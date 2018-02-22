@@ -4,5 +4,15 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+        "todoreview": {
+            "exclude_folders": [
+                ".deploy_git",
+                "themes",
+                "public",
+                "node_modules"
+            ]
+        }
+    }
 }

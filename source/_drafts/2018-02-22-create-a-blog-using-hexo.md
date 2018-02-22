@@ -62,16 +62,20 @@ hexo server
 `````
 使用浏览器访问http://localhost:4000应该就能看到博客的首页了。
 
-创建新的分支
-git checkout -b hexo
-删掉所有文件，将.git目录移出，运行hexo init,hexo install
-将.git目录移回
-将xxx目录，xxx文件移回
-
 ### 主题的安装和配置
-设置theme
-git submodule add xxx
-修改主题的_config.yml
+选择一个自己喜欢的主题，现在Hexo上较为流行的一个主题是[next](https://theme-next.org/)，我也使用的是这个主题，下面以这个主题为例来描述如何安装和配置主题。
+首先将前面移走的.git目录移回博客目录下，这样博客目录里面的内容才会被Git管理起来；
+然后访问选定主题的GitHub页面，将其fork到自己的账户下；
+第三步就是将
+`````
+git submodule add https://github.com/theme-next/hexo-theme-next.git
+`````
+打开博客目录下的_config.yml文件，修改下面一行：
+`````
+theme: my-next
+`````
+
+TODO: 如何Fork以及同步Fork，参考https://help.github.com/articles/fork-a-repo/
 
 ### 部署到Github
 如果要使用Gitpages
