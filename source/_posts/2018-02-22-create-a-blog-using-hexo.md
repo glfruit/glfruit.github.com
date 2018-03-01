@@ -6,6 +6,9 @@ categories: IT生活
 date: 2018-02-22 07:10:28
 ---
 
+**更新日志**
+*2018年3月1日：添加不蒜子统计和Google分析配置*
+
 
 [Hexo](https://hexo.io)是一个老牌的博客写作与管理工具，我从[Jekyll](https://github.com/mojombo/jekyll)迁移到[Hexo](https://hexo.io)也有五六年的时间了，虽然博客没写几篇（写作也是个体力活啊），但是断断续续也在维护，只是开始用[Hexo](https://hexo.io)时还是2.x的版本，后来升级到3.x版本，使用过程中始终有些小问题，而且因为我有多台电脑，如何在多台电脑之间维护管理博客也是一个问题，一直没有认真去解决，这次趁着春节放假，离上班还有几天时间，就把整个博客仓库清理了一遍，把遗留的问题也都解决了，把整个过程记录下来，以做备忘。
 <!-- more -->
@@ -108,6 +111,28 @@ git submodule update
 git pull
 ```
 
+## 常用插件
+### 不蒜子统计
+不蒜子是一个可以统计站点和页面访问量的工具，在最新的next主题中的配置相当简单，只需要打开主题的_config.yml文件，找到busuanzi_count，将enable设置为即可。如果还需要站点的UV数，直接在busuanzi_count下面添加如下配置即可：
+```
+site_uv: true
+site_uv_header: 本站访客数
+site_uv_footer: 人次
+```
+
+设置站点的PV数：
+```
+site_pv: true
+site_pv_header: 本站总访问量
+site_pv_footer: 次
+```
+
+设置单页面的PV数：
+```
+page_pv: true
+page_pv_header: 本文总阅读量
+page_pv_footer: 次
+```
 
 ## 参考资料
 1. [Github pages + hexo博客搭建教程](https://segmentfault.com/a/1190000011535121)
