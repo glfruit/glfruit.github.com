@@ -6,7 +6,7 @@ tags: 教程,DotNet
 # ASP.NET Core Razor Pages入门（一）
 [原文地址](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&tabs=visual-studio)
 
-**注：**本文及后续的系列文章是我对[Tutorial: Get started with Razor Pages in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&tabs=visual-studio)的中文翻译和补充。之所以内容上会有所补充，是由于.NET Core版本升级的关系，原文代码中饮用的一些类和方法的命名空间已经发生了变化，按照原文所给的源代码是无法顺利运行的，因此我进行了修正补充，以使得示例代码能够顺利运行。
+**注：**本文及后续的系列文章是我对[Tutorial: Get started with Razor Pages in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&tabs=visual-studio)的中文翻译和补充。之所以内容上会有所补充，是由于.NET Core版本升级的关系，原文代码中引用的一些类和方法的命名空间已经发生了变化，按照原文所给的源代码是无法顺利运行的，因此我进行了修正补充，以使得示例代码能够顺利运行。
 
 在本教程中，你将：
 - 创建一个Razor Pages的Web应用
