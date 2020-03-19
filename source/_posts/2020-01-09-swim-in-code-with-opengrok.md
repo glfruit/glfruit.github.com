@@ -4,6 +4,7 @@ date: 2020-01-09 20:54:29
 tags: 日志备忘
 ---
 最近打算好好研究一下微软给出的微服务架构示例项目[eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)，需要一个方便的源代码浏览工具，自然而言地想到了用[OpenGrok](https://oracle.github.io/opengrok/)来进行。原来安装配置过，但是没有做记录，这么久了也忘记怎么做了，又从头折腾了一遍，为了备忘，将安装配置的过程记录下来。
+
 ##  基本环境
 - Debian 10.1.0(buster)
 - JDK 11
@@ -13,7 +14,8 @@ tags: 日志备忘
 <!-- more -->
 
 ##  安装步骤
-1. 安装JDK 11
+1. 安装JDK 11 
+
 
 ```bash
 sudo apt install openjdk-11-jdk
