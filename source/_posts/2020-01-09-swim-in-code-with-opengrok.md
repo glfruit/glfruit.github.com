@@ -1,7 +1,7 @@
 ---
 title: 代码畅游必备工具-在Debian上安装配置OpenGrok 
 date: 2020-01-09 20:54:29
-tags: 日志备忘
+tags: [技术生活]
 ---
 最近打算好好研究一下微软给出的微服务架构示例项目[eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)，需要一个方便的源代码浏览工具，自然而言地想到了用[OpenGrok](https://oracle.github.io/opengrok/)来进行。原来安装配置过，但是没有做记录，这么久了也忘记怎么做了，又从头折腾了一遍，为了备忘，将安装配置的过程记录下来。
 
