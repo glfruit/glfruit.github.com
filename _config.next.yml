@@ -6,6 +6,8 @@ menu:
   tags: /tags/ || fa fa-tags
   archives: /archives/ || fa fa-archive
 
+footer:
+  since: 2012
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
@@ -66,5 +68,3 @@ social:
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
 
-  footer:
-    since: 2012
