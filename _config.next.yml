@@ -2,10 +2,8 @@ scheme: Mist
 
 menu:
   home: / || fa fa-home
-  research: /research/ || fa fa-university
-  reading: /reading/ || fa fa-book
-  tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
   archives: /archives/ || fa fa-archive
 
 # Sidebar Avatar
@@ -67,3 +65,6 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
+
+footer:
+  since: 2012
