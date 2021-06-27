@@ -1,4 +1,12 @@
-scheme: Gemini
+scheme: Mist
+
+menu:
+  home: / || fa fa-home
+  research: /research/ || fa fa-university
+  reading: /reading/ || fa fa-book
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
 
 # Sidebar Avatar
 avatar:
@@ -49,11 +57,11 @@ busuanzi_count:
   post_views_icon: eye
 
 social:
-  GitHub: https://github.com/glfruit || github
-  E-Mail: mailto:glfruit80@gmail.com || envelope
-  Weibo: https://weibo.com/p/1005053230781654/home || weibo
+  GitHub: https://github.com/glfruit || fab fa-github
+  E-Mail: mailto:glfruit80@gmail.com || fa fa-envelope
+  Weibo: https://weibo.com/p/1005053230781654/home || fab fa-weibo
   #Google: https://plus.google.com/yourname || google
-  Twitter: https://twitter.com/glfruit || twitter
+  Twitter: https://twitter.com/glfruit || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
