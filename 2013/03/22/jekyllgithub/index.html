@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;glfruit.me&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Mist&quot;,&quot;version&quot;:&quot;8.5.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script><script src="/js/config.js"></script>
+<meta name="description" content="我其实不是一个博客系统的重度用户，写博客的频率并不高，在先先后后注册的若干个博客里面都躺着我开个了头然后就没有了结尾的帖子。但是，我也确实越来越觉得坚持写博客是一件好事， 是一个忠实记录自己的心路历程的过程，也是让自己飘忽的思想能够有一个落脚点的地方，于是又兴起了开一个新博客的念头，原打算花点钱买个wordpress空间折腾一下，念及自己去年 的失败经历，花了钱却总共没写到十篇博客，今年也不敢保证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于GitHub Pages搭建个人博客（一）">
+<meta property="og:url" content="http://glfruit.me/2013/03/22/jekyllgithub/index.html">
+<meta property="og:site_name" content="天地一沙鸥">
+<meta property="og:description" content="我其实不是一个博客系统的重度用户，写博客的频率并不高，在先先后后注册的若干个博客里面都躺着我开个了头然后就没有了结尾的帖子。但是，我也确实越来越觉得坚持写博客是一件好事， 是一个忠实记录自己的心路历程的过程，也是让自己飘忽的思想能够有一个落脚点的地方，于是又兴起了开一个新博客的念头，原打算花点钱买个wordpress空间折腾一下，念及自己去年 的失败经历，花了钱却总共没写到十篇博客，今年也不敢保证">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-03-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-06-27T04:21:15.211Z">
+<meta property="article:author" content="Fruit Lee">
+<meta property="article:tag" content="jekyll">
+<meta property="article:tag" content="jekyllbootstrap">
+<meta property="article:tag" content="github">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://glfruit.me/2013/03/22/jekyllgithub/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;glfruit.me&#x2F;2013&#x2F;03&#x2F;22&#x2F;jekyllgithub&#x2F;&quot;,&quot;path&quot;:&quot;2013&#x2F;03&#x2F;22&#x2F;jekyllgithub&#x2F;&quot;,&quot;title&quot;:&quot;基于GitHub Pages搭建个人博客（一）&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>基于GitHub Pages搭建个人博客（一） | 天地一沙鸥</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54350097-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{&quot;tracking_id&quot;:&quot;UA-54350097-1&quot;,&quot;only_pageview&quot;:false,&quot;baidu_analytics&quot;:&quot;93104e8512a96dc3d4343e12f55f7f0a&quot;}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">天地一沙鸥</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just For Fun</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-research"><a href="/research/" rel="section"><i class="fa fa-university fa-fw"></i>学习</a></li>
+        <li class="menu-item menu-item-reading"><a href="/reading/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fruit Lee"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Fruit Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/glfruit" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;glfruit" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:glfruit80@gmail.com" title="E-Mail → mailto:glfruit80@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005053230781654/home" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005053230781654&#x2F;home" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/glfruit" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;glfruit" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://glfruit.me/2013/03/22/jekyllgithub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Fruit Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天地一沙鸥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于GitHub Pages搭建个人博客（一）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2013-03-22T00:00:00+08:00">2013-03-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/IT%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">IT生活</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>我其实不是一个博客系统的重度用户，写博客的频率并不高，在先先后后注册的若干个博客里面都躺着我开个了头然后就没有了结尾的帖子。但是，我也确实越来越觉得坚持写博客是一件好事， 是一个忠实记录自己的心路历程的过程，也是让自己飘忽的思想能够有一个落脚点的地方，于是又兴起了开一个新博客的念头，原打算花点钱买个wordpress空间折腾一下，念及自己去年 的失败经历，花了钱却总共没写到十篇博客，今年也不敢保证，所以虽然钱不多却也不想浪费了，还是决定找个免费空间来用，但是这个免费空间一定要稳定、可靠。转了一圈也没发现满意 的，正准备放弃时，看到了基于<a href="http://www.github.com">GitHub</a>和<a href="https://github.com/mojombo/jekyll">Jekyll</a>搭建博客的文章，正好满足自己的需求，经过一番折腾，算是将基本框架 搭建起来了，下面就是我的折腾日记，也算作开篇吧。</p>
+<p>整个折腾过程大致可以分为以下几个部分：</p>
+<ul>
+<li>搭建基本环境</li>
+<li>绑定域名</li>
+<li>使用reStructuredText</li>
+</ul>
+<p>本篇博客主要讲的就是基本环境的搭建，不过需要说明的是，因为我使用的是Mac OS的系统，所以全部的步骤都是按Mac OS的情况来进行的。</p>
+<ol type="1">
+<li><p>基本运行环境</p>
+<p>由于GitHub Pages事实上是用Jekyll来生成的静态页面，所以我们在写博客时要遵守其规则，而为了测试是否确实符合，我们需要在自己的机器上按照Jekyll，而Jekyll实际上使用<a href="http://www.ruby-lang.org/zh_cn/">Ruby</a> 写的一个工具，因此还需要<a href="http://www.ruby-lang.org/zh_cn/">Ruby</a>运行环境;又由于事实上整个博客就是一个<a href="http://git-scm.com">Git</a>仓库，所以还需要安装<a href="http://git-scm.com">Git</a>。 如果安装了<a href="https://github.com/mxcl/homebrew">Homebrew</a>的话就很好办了：</p>
+<pre><code>$ brew install ruby
+
+$ sudo gem install jekyll
+
+$ brew install git</code></pre></li>
+<li><p>注册<a href="http://www.github.com">GitHub</a>账号</p>
+<p>前往<a href="http://www.github.com">GitHub</a>，用自己喜欢的用户名注册一个账号，要注意的是，如果打算绑定到自己的域名上，那么注册的用户名要和打算绑定的域名一致才行。这步很简单， 只要看得懂基本的英文就没问题了。</p></li>
+<li><p>安装Jekyll-Bootstrap</p>
+<pre><code>$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
+
+$ cd USERNAME.github.com
+
+$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
+
+$ git push origin master</code></pre>
+<p>这里的USERNAME就是你在<a href="http://www.github.com">GitHub</a>上所注册的用户名。这一步其实不是必需的，你完全可以按照<a href="http://net.tutsplus.com/tutorials/other/building%20-static-sites-with-jekyll">这里</a>的说明从零开始，但是使用Jekyll-Bootstrap的话可以让你的博客有一个不错的初始模板，再在这个基础上根据自己的需要进行修改就方便多了。完成之后， 最多等个10分钟左右，访问USERNAME.github.com，应该就可以看到搭建好的博客首页了。</p></li>
+</ol>
+<p>参考文档</p>
+<ul>
+<li><a href="http://net.tutsplus.com/tutorials/other/building-static-sites-with-jekyll/">Building Static Sites with Jekyll</a></li>
+<li><a href="http://beiyuu.com/github-pages/">使用Github Pages建独立博客</a></li>
+<li><a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/jekyll/" rel="tag"># jekyll</a>
+              <a href="/tags/jekyllbootstrap/" rel="tag"># jekyllbootstrap</a>
+              <a href="/tags/github/" rel="tag"># github</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/01/20/jdeeemacs24/" rel="prev" title="终于让JDEE在Emacs 24上跑起来了">
+                  <i class="fa fa-chevron-left"></i> 终于让JDEE在Emacs 24上跑起来了
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2013/11/20/grails-intellij-debug/" rel="next" title="IntelliJ Idea中开发Grails应用的几个问题">
+                  IntelliJ Idea中开发Grails应用的几个问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fruit Lee</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{&quot;enable&quot;:true,&quot;tags&quot;:&quot;none&quot;,&quot;mhchem&quot;:false,&quot;js&quot;:{&quot;url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.1.4&#x2F;es5&#x2F;tex-mml-chtml.js&quot;,&quot;integrity&quot;:&quot;sha256-ncNI9OXOS5Ek4tzVYiOMmN&#x2F;KKCPZ6V0Cpv2P&#x2F;zHntiA&#x3D;&quot;}}</script>
+<script src="/js/third-party/math/mathjax.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+</html>
