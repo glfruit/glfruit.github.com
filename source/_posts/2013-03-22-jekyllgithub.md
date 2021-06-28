@@ -3,7 +3,7 @@ layout: post
 title: "基于GitHub Pages搭建个人博客（一）"
 date: 2013-03-22
 description: ""
-categories: IT生活
+categories: 数字生活
 tags: [jekyll, jekyllbootstrap, github]
 ---
 

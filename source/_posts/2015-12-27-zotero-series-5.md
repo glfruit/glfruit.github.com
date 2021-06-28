@@ -1,7 +1,7 @@
 title: "使用Zotero做科研（五）——与Scrivener的整合"
 date: 2015-12-27 12:37:47
 tags: [Zotero, Scrivener]
-categories: IT生活
+categories: 数字生活
 ---
 通常我的写作都是在Scrivener里面进行，它跨平台，对于写作素材的搜集和管理也十分方便，但是用在写论文时有个最大的问题，就是不能像在Word里面一样方便地添加文献引用。虽然也有折衷的办法，像[这篇文章](https://danielvreeman.com/using-scrivener-for-writing-scientific-papers/)里的方法，我的上一篇论文就是采取这种方式完成的，可是觉得繁琐，而且还要装个不想干的LireOffice。几天前心血来潮又开始新的折腾的时候，发现了[这篇文章](http://davepwsmith.github.io/academic-scrivener-howto/)，按照其中的步骤进行配置，又根据自己的环境进行了调整，总算是实现了在Scrivener里一键插入文献引用的功能，并且又根据里面的AppleScript脚本依样画葫芦，用PowerShell实现了一个Windows版的脚本，这样在Windows上也可以实现同样的效果了。
 <!-- more -->

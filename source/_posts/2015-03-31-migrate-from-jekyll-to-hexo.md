@@ -1,7 +1,7 @@
 title: "Hexo简介"
 date: 2015-03-31 08:57:47
-tags:
-categories: IT生活
+tags: []
+categories: 数字生活
 ---
 
 

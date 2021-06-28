@@ -2,7 +2,7 @@
 title: 使用Hexo创建博客站点
 tags:
   - Hexo
-categories: IT生活
+categories: 数字生活
 date: 2018-02-22 07:10:28
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core Razor Pages入门（一）
 date: 2020-01-04 22:56:55
-tags: 教程,DotNet
+tags: [DotNet]
 ---
 # ASP.NET Core Razor Pages入门（一）
 [原文地址](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&tabs=visual-studio)

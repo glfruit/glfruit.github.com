@@ -1,6 +1,6 @@
 title: 'Mac生活（一）—— Yosemite的召唤'
 categories:
-- Mac生活
+- 数字生活
 tags:
 - Mac
 date: 2014-06-18 16:51:12
