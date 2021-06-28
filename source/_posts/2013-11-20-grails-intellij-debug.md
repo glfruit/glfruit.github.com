@@ -3,7 +3,7 @@ layout: post
 title: IntelliJ Idea中开发Grails应用的几个问题
 date: 2013-11-20 10:56
 description: "描述了使用IntelliJ IDEA进行Grails的开发时遇到的几个问题及其解决方法"
-categories: IT生活
+categories: 技术研究
 tags: [Grails, IntelliJ]
 ---
 
