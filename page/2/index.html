@@ -146,7 +146,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -487,7 +487,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+        <time title="修改时间：2021-06-27 19:50:04" itemprop="dateModified" datetime="2021-06-27T19:50:04+08:00">2021-06-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -495,7 +495,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/IT%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">IT生活</span></a>
+          <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">数字生活</span></a>
         </span>
     </span>
 
@@ -600,7 +600,7 @@ $ git push origin master</code></pre>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+        <time title="修改时间：2021-06-27 19:49:51" itemprop="dateModified" datetime="2021-06-27T19:49:51+08:00">2021-06-27</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -608,7 +608,7 @@ $ git push origin master</code></pre>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/IT%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">IT生活</span></a>
+          <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">数字生活</span></a>
         </span>
     </span>
 
@@ -663,7 +663,7 @@ $ git push origin master</code></pre>
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/01/05/clojure/" class="post-title-link" itemprop="url">Clojure的基本原理</a>
+          <a href="/2012/01/05/clojure/" class="post-title-link" itemprop="url">Clojure的基本理念</a>
         </h2>
 
         <div class="post-meta-container">
@@ -681,7 +681,7 @@ $ git push origin master</code></pre>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+        <time title="修改时间：2021-07-13 14:41:46" itemprop="dateModified" datetime="2021-07-13T14:41:46+08:00">2021-07-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -689,7 +689,7 @@ $ git push origin master</code></pre>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%BF%BB%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">技术翻译</span></a>
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" itemprop="url" rel="index"><span itemprop="name">技术研究</span></a>
         </span>
     </span>
 
@@ -703,15 +703,18 @@ $ git push origin master</code></pre>
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>基本原理</p>
-<p>客户和干系人都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量的投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要使用原生线程和加锁来面对涉及到并发的问题。Clojure就是在这样一种背景下所做的一个实用动态语言设计的努力。它致力于成为一种适用于Java所使用的那些领域。它反映出了未来的并发编程的事实，即，普遍的、不会减速的变化必然会到来。 Clojure通过以下几点来达到它的目的：</p>
+          <h2 id="clojure的基本理念">Clojure的基本理念</h2>
+<p>客户和相关人员都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活性及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要面对使用原生线程和加锁处理并发时所持续不断出现的问题。Clojure就是在这样一种背景下所做出的实用动态语言设计的努力。它致力于成为一种Java所适用的那些领域中的通用语言。它反映出了一个现实，对于并发编程来说，现在普遍存在的、不受约束的状态变化必然会消失。</p>
+<p>Clojure通过以下几点来达到它的目的：</p>
 <ul>
 <li>拥抱行业标准的开发平台——JVM</li>
 <li>对一门值得尊敬的语言——Lisp进行现代化改造</li>
-<li>通过不变的持久化数据结构来鼓励函数式编程</li>
+<li>通过不变的持久化数据结构来促进函数式编程</li>
 <li>通过软件事务内存和异步代理提供内建的并发支持</li>
 </ul>
-<p>我们最终得到的是一个强健、实用而快速的结果。 为什么要使用Clojure？</p>
+<p>我们最终得到的是一门健壮、实用而快速的语言。</p>
+<p>Clojure对于状态和同一性采取了一种与众不同的方式。</p>
+<h2 id="为什么要使用clojure">为什么要使用Clojure？</h2>
 <p>我为什么还要再编写一门程序语言？大体而言，因为我想要：</p>
 <ul>
 <li>一种Lisp</li>
@@ -720,68 +723,110 @@ $ git push origin master</code></pre>
 <li>为并发而设计</li>
 </ul>
 <p>但是我却没有找到这样一种语言。下面是对Clojure背后的一些动机的概述：</p>
+<h2 id="lisp是个好东西">Lisp是个好东西</h2>
 <ul>
-<li>Lisp是个好东西</li>
-<li>经常被模仿/洗劫，但是仍未被复制</li>
-<li>Lambda演算导致一个非常小的核心</li>
-<li>几乎没有语法</li>
-<li>核心优势仍然是代码即数据以及语法抽象</li>
-<li>标准的Lisp（Common Lisp和Scheme）</li>
+<li><p>经常被模仿/洗劫，但是仍未被复制</p></li>
+<li><p>Lambda演算产生出一个非常小的核心</p></li>
+<li><p>几乎没有语法</p></li>
+<li><p>核心优势仍然是代码即数据以及语法抽象</p></li>
+<li><p>标准的Lisp（Common Lisp和Scheme）</p>
+<ul>
 <li>标准化之后缓慢/没有革新</li>
 <li>核心的数据结构是可变的，并且不可扩展</li>
 <li>规范中没有涉及到并发</li>
 <li>JVM上已经有了良好的实现（ABCL，Kawa，SISC等）</li>
 <li>标准的Lisp自身即是一个平台</li>
+</ul></li>
+<li><p>Clojure是一种没有向后兼容性约束的Lisp</p>
+<ul>
+<li><p>将“代码即数据”的范式推广到了map和vector</p></li>
+<li><p>默认数据是不可改变的</p></li>
+<li><p>核心的数据结构是可扩展的抽象</p></li>
+<li><p>拥抱平台（JVM）</p></li>
+</ul></li>
 </ul>
-<p>Clojure是一种没有向后兼容性约束的Lisp</p>
-<p>将“代码即数据”的范式推广到了map和vector</p>
-<p>默认数据是不可改变的</p>
-<p>核心的数据结构是可扩展的抽象</p>
-<p>拥抱了一个平台（JVM）</p>
-<p>函数式编程是个好东西</p>
-<p>数据不可变+函数为一等“公民”</p>
-<p>总是能够根据行规/惯例用Lisp完成</p>
-<p>但是如果数据结构是可变的，那么假设数据不会被改变是很危险的事情</p>
-<p>在传统的Lisp中，只有list数据结构在结构上才是可递归的</p>
-<p>纯粹的函数式语言总是倾向于强静态类型</p>
-<p>并非对每个人、每个任务都合适</p>
-<p>Clojure是一种强调动态性的函数式语言</p>
-<p>所有的数据都不可变&amp;可持久化，且支持递归</p>
-<p>不同类型的集合、返回类型</p>
-<p>动态的多态</p>
-<p>语言和平台</p>
-<p>虚拟机，而不是操作系统，才是未来的平台，它提供了：</p>
-<p>类型系统</p>
-<p>动态执行和安全性</p>
-<p>库</p>
-<p>抽象了OS</p>
-<p>大量的工具</p>
-<p>内建和第三方</p>
-<p>内存及其它资源管理</p>
-<p>GC是一个平台，而不是语言、工具</p>
-<p>字节码+JIT编译</p>
-<p>抽象了硬件</p>
-<p>语言即平台 vs 语言+平台</p>
-<p>老的方式——每种语言定义自己的运行时</p>
-<p>GC、字节码、类型系统、库等</p>
-<p>新的方式（JVM，.NET）</p>
-<p>独立于语言的通用运行时</p>
-<p>为平台构建的语言 vs 移植到平台的语言</p>
-<p>许多新的语言仍然采用“语言即平台”的方式</p>
-<p>移植时存在着 平台到平台的问题</p>
-<p>内存管理、类型系统、线程问题</p>
-<p>重复的库</p>
-<p>如果原来的语言基于C的话，一些用C写的扩展库并未移植过来</p>
-<p>平台是由客户指定的</p>
-<p>必须运行在JVM或.NET上 vs 必须运行在Unix或Windows上</p>
-<p>JVM已经建立了追踪记录和信任级别</p>
-<p>现在也已经开源了</p>
-<p>需要和其它代码交互</p>
-<p>现在光有C的连接是不够的</p>
-<p>Java/JVM是语言+平台</p>
-<p>Java</p>
-<p>Clojure是语言，JVM是平台</p>
-<p>OO被高估了</p>
+<h2 id="函数式编程是个好东西">函数式编程是个好东西</h2>
+<ul>
+<li><p>数据不可变+函数为一等“公民”</p></li>
+<li><p>总是能够根据行规/惯例用Lisp完成</p>
+<ul>
+<li>但是如果数据结构是可变的，那么假设数据不会被改变是很危险的事情</li>
+<li>在传统的Lisp中，只有list数据结构在结构上才是可递归的</li>
+</ul></li>
+<li><p>纯粹的函数式语言总是倾向于强静态类型</p>
+<ul>
+<li>并非对每个人、每个任务都合适</li>
+</ul></li>
+<li><p>Clojure是一种强调动态性的函数式语言</p>
+<ul>
+<li>所有的数据都不可变&amp;可持久化，且支持递归</li>
+<li>不同类型的集合、返回类型</li>
+<li>动态的多态</li>
+</ul></li>
+</ul>
+<h2 id="语言和平台">语言和平台</h2>
+<ul>
+<li>虚拟机，而不是操作系统，才是未来的平台，它提供了：
+<ul>
+<li>类型系统
+<ul>
+<li>动态执行和安全性</li>
+</ul></li>
+<li>库
+<ul>
+<li>抽象了OS</li>
+<li>大量的工具</li>
+<li>内建和第三方</li>
+</ul></li>
+<li>内存及其它资源管理
+<ul>
+<li>GC是一个平台，而不是语言、工具</li>
+</ul></li>
+<li>字节码+JIT编译
+<ul>
+<li>硬件抽象</li>
+</ul></li>
+</ul></li>
+<li>语言即平台 vs 语言+平台
+<ul>
+<li>老的方式——每种语言定义自己的运行时
+<ul>
+<li>GC、字节码、类型系统、库等</li>
+</ul></li>
+<li>新的方式（JVM，.NET）
+<ul>
+<li>独立于语言的通用运行时</li>
+</ul></li>
+</ul></li>
+<li>为平台构建的语言 vs 移植到平台的语言
+<ul>
+<li>许多新的语言仍然采用“语言即平台”的方式</li>
+<li>移植时存在着 平台到平台的问题
+<ul>
+<li>内存管理、类型系统、线程问题</li>
+<li>重复的库</li>
+<li>如果原来的语言基于C的话，一些用C写的扩展库并未移植过来</li>
+</ul></li>
+</ul></li>
+<li>平台是由客户指定的
+<ul>
+<li>必须运行在JVM或.NET上 vs 必须运行在Unix或Windows上</li>
+<li>JVM已经建立了追踪记录和信任级别
+<ul>
+<li>现在也已经开源了</li>
+</ul></li>
+<li>需要和其它代码交互
+<ul>
+<li>现在光有C的连接是不够的</li>
+</ul></li>
+</ul></li>
+<li>Java/JVM是语言+平台
+<ul>
+<li>Java</li>
+</ul></li>
+<li>Clojure是语言，JVM是平台</li>
+</ul>
+<h2 id="oo被高估了">OO被高估了</h2>
 <p>起源于模仿，如今用于每个地方，即使不合适</p>
 <p>多态是个好东西</p>
 <p>Switch语句、结构匹配等导致脆弱的系统</p>
@@ -789,10 +834,27 @@ $ git push origin master</code></pre>
 <p>Clojure的多方法机制将多态与OO和类型分离开来</p>
 <p>支持多种分类</p>
 <p>通过静态、动态、外部属性、元数据等方式进行派发</p>
-<p>并发及多核未来</p>
-<p>不可变性让许多问题都消失了</p>
-<p>可以自由地在线程之间共享</p>
-<p>简而言之，我认为Clojure作为JVM上一种对并发有很强支持的、能够实际运行的Lisp占据了一个独特的位置。看看Clojure的一些特点。</p>
+<h2 id="多态是好东西">多态是好东西</h2>
+<ul>
+<li>switch语句、结构化匹配等产生出脆弱的系统</li>
+<li>多态产生出可扩展的灵活系统</li>
+<li>Clojure的multimethod将多态与OO和类型解耦
+<ul>
+<li>支持多重分类法</li>
+<li>通过静态、动态或者外部属性、原数据等分发消息</li>
+</ul></li>
+</ul>
+<h2 id="并发及多核未来">并发及多核未来</h2>
+<ul>
+<li>不变性让许多问题都消失了
+<ul>
+<li>在线程间自由共享</li>
+</ul></li>
+<li>对于模拟和程序与外部世界之间的代理来说，状态改变是一个现实</li>
+<li>上锁（locking）非常困难，不可能每次都能正确实现</li>
+<li>Clojure的软件事务内存（software transaction memory）和代理系统（agent system）解决了困难的地方</li>
+</ul>
+<p>简而言之，我认为Clojure作为JVM上一种对并发有很强支持的、能够实际运行的Lisp占据了一个独特的位置。看看Clojure的一些<a href="https://clojure.org/about/features">特点</a>或者<a href="https://clojure.org/guides/getting_started">开始使用Clojure</a>。</p>
 
       
     </div>
