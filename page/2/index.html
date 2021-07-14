@@ -133,20 +133,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -198,6 +198,90 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://glfruit.me/2013/11/25/grails-tip-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Fruit Lee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天地一沙鸥">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/11/25/grails-tip-3/" class="post-title-link" itemprop="url">Grails点滴（三）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-11-25 16:47:00" itemprop="dateCreated datePublished" datetime="2013-11-25T16:47:00+08:00">2013-11-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-07-13 14:50:36" itemprop="dateModified" datetime="2021-07-13T14:50:36+08:00">2021-07-13</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" itemprop="url" rel="index"><span itemprop="name">技术研究</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在进行Grails的开发时，我们经常需要查看GORM所产生的sql语句，需要在Datasource.groovy文件中加入下列配置： <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dataSource &#123;</span><br><span class="line">  ...</span><br><span class="line">  logSql = <span class="literal">true</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 为了让输出的sql语句清晰好读，还可以进行进一步配置，即在Datasource.groovy中加入： <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hibernate &#123;</span><br><span class="line">  ...</span><br><span class="line">  format_sql = <span class="literal">true</span></span><br><span class="line">  use_sql_comments = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 但是有的时候我们不仅需要查看生成的sql语句，还需要查看在执行sql语句时实际传入的参数，这时需要在Config.groovy文件中加入下列配置信息： <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">log4j = &#123;</span><br><span class="line">  debug <span class="string">&quot;org.hibernate.SQL&quot;</span></span><br><span class="line">  trace <span class="string">&quot;org.hibernate.type.descriptor.sql.BasicBinder&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 经过以上这些配置后就能很方便的查看生成的sql语句及其参数了。</p>
+<p>参考资料</p>
+<ol type="1">
+<li><a href="http://manning.com/gsmith2/">《Grails in Action, 2nd Edition》</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://glfruit.me/2013/11/25/grails-tip-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -229,7 +313,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+        <time title="修改时间：2021-07-13 14:50:36" itemprop="dateModified" datetime="2021-07-13T14:50:36+08:00">2021-07-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -237,7 +321,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/IT%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">IT生活</span></a>
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" itemprop="url" rel="index"><span itemprop="name">技术研究</span></a>
         </span>
     </span>
 
@@ -313,7 +397,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+        <time title="修改时间：2021-07-13 14:50:36" itemprop="dateModified" datetime="2021-07-13T14:50:36+08:00">2021-07-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,7 +405,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/IT%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">IT生活</span></a>
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" itemprop="url" rel="index"><span itemprop="name">技术研究</span></a>
         </span>
     </span>
 
@@ -400,7 +484,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-27 12:21:15" itemprop="dateModified" datetime="2021-06-27T12:21:15+08:00">2021-06-27</time>
+        <time title="修改时间：2021-07-13 14:50:36" itemprop="dateModified" datetime="2021-07-13T14:50:36+08:00">2021-07-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -408,7 +492,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/IT%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">IT生活</span></a>
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" itemprop="url" rel="index"><span itemprop="name">技术研究</span></a>
         </span>
     </span>
 
@@ -681,7 +765,7 @@ $ git push origin master</code></pre>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-13 14:41:46" itemprop="dateModified" datetime="2021-07-13T14:41:46+08:00">2021-07-13</time>
+        <time title="修改时间：2021-07-13 14:50:36" itemprop="dateModified" datetime="2021-07-13T14:50:36+08:00">2021-07-13</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
