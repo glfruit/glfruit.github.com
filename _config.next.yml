@@ -8,6 +8,12 @@ menu:
 
 footer:
   since: 2012
+  beian:
+    enable: true
+    icp: 粤ICP备2021179087号-1 
+    gongan_id: 44180202000677 
+    gongan_num: 粤公网安备 44180202000677号 
+    gongan_icon_url: /images/beian.png
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
@@ -58,10 +64,10 @@ busuanzi_count:
 
 social:
   GitHub: https://github.com/glfruit || fab fa-github
-  E-Mail: mailto:glfruit80@gmail.com || fa fa-envelope
+  E-Mail: mailto:glfruit@qq.com || fa fa-envelope
   Weibo: https://weibo.com/p/1005053230781654/home || fab fa-weibo
   #Google: https://plus.google.com/yourname || google
-  Twitter: https://twitter.com/glfruit || fab fa-twitter
+  #Twitter: https://twitter.com/glfruit || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
