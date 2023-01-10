@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>你好，2012！</title>
+    <url>/2012/01/03/hello2012/</url>
+    <content><![CDATA[<p>作为我第一个正儿八经的博客上的第一篇帖子，起个什么样的标题首先就让我纠结了一阵，想了一想，刚好碰上2012年的开始，自己对过去的一年有不少的感触，对新的一年也有不少想法和期许，而且按照自己过去的习惯，应该写一篇年终总结和来年的计划的，于是就写下了这样一个标题，这篇博客也就当做年终总结和来年计划来写了。</p>
+<p>回首2011年，杂七杂八的事情还真不少，工作上的，生活上的，简而言之有这么几项吧：</p>
+<p>首先是自己负责主持的一个省级项目终于算是告一段落了，虽然过程磕磕绊绊，不是太尽如人意，但是就结果而言还是达到了预期的目的，没有出现自己所担心的全盘崩溃的情况；另外自己在项目管理和软件工程方面的经验也得到了进一步的锻炼和提升，也算是不小的收获。顺便说一句，像项目管理和软件工程这种东西个人觉得事实上是和实践结合非常紧密的东西，非自己操刀上阵演练一番难得有切身体会，光看书本的话是足以让人昏昏欲睡，敬而远之的；</p>
+<p>其次是理顺了管理上的一些东西，我所负责的部分的运作情况比原来应该说又顺畅了许多，自己也在这个过程中积累了一些管理的经验，虽然耽误了自己一些钻研技术的时间，但是我认为还是值得的。我始终认为，技术是为了人的实际需求而存在的，因此技术要发挥最好的功效，必然涉及到与人的互动和组织，而这正是许多技术人员存在的问题，与机器打交道轻车路熟、扮演着上帝一样的角色，但是在与人打交道时就如机器一样木讷了，不能将自己的观点和想法有效地传达给别人，从而使自己能够发挥的作用大打折扣，可能许多技术人员大有怀才不遇之感也是因为这个原因吧。</p>
+<p>另外人手紧张的问题终于得到了暂时缓解，让我在安排事情上不再那么捉襟见肘，能够比较有效从容应对了。这样产生的一个好的结果是我终于能腾出一些时间来做一些乱七八糟的设想和计划，并有资源（包括人的和物的）来调配安排来开展这些想法。</p>
+<p>最后，对于我来说生活中最重要的一件事情就是女儿满了三岁了。带儿方知父母恩啊，这一年被小家伙也折腾得够呛，但是却也心甘情愿，充满了欢喜和满足感，深深体会到了为人父母的辛苦和欢欣。当然，在这一年的与小家伙的斗争中，老婆大人是发挥了不可替代的、中流砥柱的作用，我在这里也向她深表感谢，抛以媚眼无数:-)。
+唠叨完过去，就该放眼将来了。本年度主要要完成这么几件事情：</p>
+<p>养成良好的时间管理习惯。现在乱七八糟的事情太多，自己的想法也太多，不有效组织的话自己是没有办法来完成自己想要做的事情的。这方面主要以《Getting
+Thinkgs Done》、《One Year to an Organized Life》和《One Year to an
+Organized Work
+Life》为指导，辅以工具软件（OmniFocus，iPad版和iPhone版的，都是狠了心把牙咬碎了才买下来的，几百RMB啊）的支持；</p>
+<p>把计算机的一些基础知识过一遍。主要是自己想做做数据分析及其相关方面的一些研究和开发，在过去一年的折腾过程中深感操作系统、算法、编译原理这些基础知识的重要性和不可或缺性；还有就是将统计概率方面的知识也好好梳理一下，现在是越来越觉得这两样东西的重要和有趣了，只是可惜当初大学里老师的授课，真是让人泪奔啊！</p>
+<p>看看育儿方面的一些书籍，《Pink Brain, Blue Brain》和《What's going on
+in
+there》两本书都不错，是从刘未鹏的博客上发现的，已多多少少翻了一些了，有空写几篇读书心得。</p>
+<p>还有，呃，《资治通鉴》也要读几册吧，买回来这么久还只把第一册读了一些，实在惭愧，读的进度和我最近买回来的《廿二史札记》的读书进度差不多，有罪啊有罪，一定要把功课补上。
+零零碎碎写了这么多，其实还有一些计划，但是自己也还没想好，就先这样吧，我这个人写博客一向都很懒的，写一点就想完事了，看看我原来的博客的草稿箱里那可怜的十多篇草稿啊，最早的都是09年的了，还在那里睡大觉，有空还是把它们整理出来放在这里吧。对了，今年还要做的一件重要的事情就是一定要坚持写博客，把自己的所想所感记下来，善哉善哉！</p>
+]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Clojure的基本理念</title>
+    <url>/2012/01/05/clojure/</url>
+    <content><![CDATA[<h2 id="clojure的基本理念">Clojure的基本理念</h2>
+<p><a href="https://clojure.org/about/rationale">原文地址</a>
+客户和相关人员都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活性及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要面对使用原生线程和加锁处理并发时所持续不断出现的问题。Clojure就是在这样一种背景下所做出的实用动态语言设计的努力。它致力于成为一种Java所适用的那些领域中的通用语言。它反映出这样一个现实，对于将来的并发编程来说，现在普遍存在的、不受约束的状态变化必然会消失。</p>
+<p>Clojure通过以下几点来达到它的目的：</p>
+<ul>
+<li>拥抱行业标准的开放平台——JVM</li>
+<li>对一门值得尊敬的语言——Lisp进行现代化改造</li>
+<li>通过不变的持久化数据结构来促进函数式编程</li>
+<li>通过软件事务内存和异步代理提供内建的并发支持</li>
+</ul>
+<p>我们最终得到的是一门健壮、实用而快速的语言。</p>
+<p>Clojure对于状态和同一性采取了一种与众不同的方式。</p>
+<h2 id="为什么会有clojure">为什么会有Clojure？</h2>
+<p>我为什么还要再编写一门程序语言？大体而言，因为我想要：</p>
+<ul>
+<li>一种Lisp</li>
+<li>函数式编程</li>
+<li>与已稳固建立的平台共生</li>
+<li>为并发而设计</li>
+</ul>
+<p>但是我却没有找到这样一种语言。下面是对Clojure背后的一些动机的概述：</p>
+<h2 id="lisp是个好东西">Lisp是个好东西</h2>
+<ul>
+<li>经常被模仿/洗劫，但是仍未被复制</li>
+<li>Lambda演算产生出一个非常小的核心</li>
+<li>几乎没有语法</li>
+<li>核心优势仍然是代码即数据以及语法抽象</li>
+<li>标准的Lisp（Common Lisp和Scheme）的状况
+<ul>
+<li>标准化之后缓慢/没有革新</li>
+<li>核心的数据结构是可变的，并且不可扩展</li>
+<li>规范中没有涉及到并发</li>
+<li>JVM上已经有了良好的实现（ABCL，Kawa，SISC等）</li>
+<li>标准的Lisp自身即是一个平台</li>
+</ul></li>
+<li>Clojure是一种没有向后兼容性约束的Lisp
+<ul>
+<li>将“代码即数据”的范式推广到了map和vector</li>
+<li>默认数据是不可改变的</li>
+<li>核心的数据结构是可扩展的抽象</li>
+<li>拥抱平台（JVM）</li>
+</ul></li>
+</ul>
+<h2 id="函数式编程是个好东西">函数式编程是个好东西</h2>
+<ul>
+<li>数据不可变+函数为一等“公民”</li>
+<li>总是能够根据行规/惯例用Lisp完成
+<ul>
+<li>但是如果数据结构是可变的，那么假设数据不会被改变是很危险的事情</li>
+<li>在传统的Lisp中，只有list数据结构在结构上才是可递归的</li>
+</ul></li>
+<li>纯粹的函数式语言总是倾向于强静态类型
+<ul>
+<li>并非对每个人、每个任务都合适</li>
+</ul></li>
+<li>Clojure是一种强调动态性的函数式语言
+<ul>
+<li>所有的数据都不可变&amp;可持久化，且支持递归</li>
+<li>不同类型的集合、返回类型</li>
+<li>动态的多态</li>
+</ul></li>
+</ul>
+<h2 id="语言和平台">语言和平台</h2>
+<ul>
+<li>虚拟机，而不是操作系统，才是未来的平台，它提供了：
+<ul>
+<li>类型系统
+<ul>
+<li>动态执行和安全性</li>
+</ul></li>
+<li>库
+<ul>
+<li>抽象了OS</li>
+<li>大量的工具</li>
+<li>内建和第三方</li>
+</ul></li>
+<li>内存及其它资源管理
+<ul>
+<li>GC是一个平台，而不是语言、工具</li>
+</ul></li>
+<li>字节码+JIT编译
+<ul>
+<li>硬件抽象</li>
+</ul></li>
+</ul></li>
+<li>语言即平台 vs 语言+平台
+<ul>
+<li>老的方式——每种语言定义自己的运行时
+<ul>
+<li>GC、字节码、类型系统、库等</li>
+</ul></li>
+<li>新的方式（JVM，.NET）
+<ul>
+<li>独立于语言的通用运行时</li>
+</ul></li>
+</ul></li>
+<li>为平台构建的语言 vs 移植到平台的语言
+<ul>
+<li>许多新的语言仍然采用“语言即平台”的方式</li>
+<li>移植时存在着平台到平台的问题
+<ul>
+<li>内存管理、类型系统、线程问题</li>
+<li>重复的库</li>
+<li>如果原来的语言基于C的话，一些用C写的扩展库并未移植过来</li>
+</ul></li>
+</ul></li>
+<li>平台是由客户指定的
+<ul>
+<li>必须运行在JVM或.NET上 vs 必须运行在Unix或Windows上</li>
+<li>JVM已经建立了追踪记录和信任级别
+<ul>
+<li>现在也已经开源了</li>
+</ul></li>
+<li>需要和其它代码交互
+<ul>
+<li>现在光有C的连接是不够的</li>
+</ul></li>
+</ul></li>
+<li>Java/JVM是语言+平台
+<ul>
+<li>JVM</li>
+<li>Java单调乏味，表达力也不够
+<ul>
+<li>函数不是一等公民，缺乏类型推断等</li>
+</ul></li>
+<li>调用/使用Java的能力至关重要</li>
+</ul></li>
+<li>Clojure是语言，JVM是平台</li>
+</ul>
+<h2 id="oo被高估了">OO被高估了</h2>
+<ul>
+<li>起源于模仿，如今用在每个地方，即使并不合适也在用
+<ul>
+<li>由于Java/C#缺乏对其它功能的（惯用的）支持，因此OO受到了它们的鼓励</li>
+</ul></li>
+<li>状态可变的对象成了新的意大利面条式代码
+<ul>
+<li>难于理解、测试和推理</li>
+<li>并发灾难</li>
+</ul></li>
+<li>继承<strong>不是</strong>实现多态的唯一方式</li>
+<li>“让100个函数操作一个数据结构要比让10个函数操作10个数据结构好“——Alan
+J. Perlis</li>
+<li>Clojure将数据结构建模为由接口表示的不可变对象，不另外提供自己的类系统</li>
+<li>在少数几个主要数据结构（seq、map、vector和set）上定义了许多函数</li>
+<li>使用Java编写Java，从Clojure使用和扩展Java</li>
+</ul>
+<h2 id="多态是个好东西">多态是个好东西</h2>
+<ul>
+<li>Switch语句、结构匹配等导致脆弱的系统</li>
+<li>多态可以带来灵活的、可扩展的系统</li>
+<li>Clojure的多方法机制将多态与OO和类型分离开来
+<ul>
+<li>支持多种分类方法</li>
+<li>通过静态、动态、外部属性、元数据等方式进行派发</li>
+</ul></li>
+</ul>
+<h2 id="并发及多核未来">并发及多核未来</h2>
+<ul>
+<li>不变性让许多问题都消失了
+<ul>
+<li>在线程间自由共享</li>
+</ul></li>
+<li>对于模拟和程序与外部世界之间的代理来说，状态改变是一个现实</li>
+<li>上锁（locking）非常困难，不可能每次都能正确实现</li>
+<li>Clojure的软件事务内存（software transaction
+memory）和代理系统（agent system）解决了困难的地方</li>
+</ul>
+<p>简而言之，我认为Clojure作为JVM上一种对并发有很强支持的、能够实际运行的Lisp占据了一个独特的位置。看看Clojure的一些<a
+href="https://clojure.org/about/features">特点</a>或者<a
+href="https://clojure.org/guides/getting_started">开始使用Clojure</a>。</p>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+      <tags>
+        <tag>Clojure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>终于让JDEE在Emacs 24上跑起来了</title>
+    <url>/2012/01/20/jdeeemacs24/</url>
+    <content><![CDATA[<p>前几天将最新的jdee下载了下来，配置进Emacs后启动就报错，使用--debug-init启动后看到错误信息说是"Wrong
+number of arguments"，再看看出错的位置，是在jde-bug.el的buffer position
+61164，于是用M-x goto-char
+61164去到出错的地方，发现是说传给semantic-add-minor-mode这个函数的参数个数不对，看看它的定义，应该是是接受两个参数，但是在调用时却实际传递了三个参数。怎么改呢？看看函数说明，把传递的三个参数的第一个去掉，看起来只是一个quote而已，应该没什么问题，再把第三个参数放在第一的位置上，保存，重新启动，Emacs又在启动时报了jde-jdb.el和jde-plugins.el两个文件中的类似错误，依样修改之后就能正常启动了。不过在状态栏上显示有jdb<em>invalid</em>的字样，可能还有点什么问题，等碰到了再修改吧，至少现在能够跑起来了，呵呵。</p>
+<p>更新：刚才google了一下 semantic-add-minor-mode这个函数，发现在Emacs
+23中它确实是接受三个参数，第三个参数是可选的。还找到一个针对这个问题的
+patch，解决方案和我是一样的，只是它将三个文件中相应的调用的第三个参数直接去掉了，唔，应该更正确一些吧，因为事实上第三个参数是可选的，要不要问题都不大。这样更改之后，果然上面提到的问题也消失了:-)</p>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+      <tags>
+        <tag>Emacs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于GitHub Pages搭建个人博客（一）</title>
+    <url>/2013/03/22/jekyllgithub/</url>
+    <content><![CDATA[<p>我其实不是一个博客系统的重度用户，写博客的频率并不高，在先先后后注册的若干个博客里面都躺着我开个了头然后就没有了结尾的帖子。但是，我也确实越来越觉得坚持写博客是一件好事，
+是一个忠实记录自己的心路历程的过程，也是让自己飘忽的思想能够有一个落脚点的地方，于是又兴起了开一个新博客的念头，原打算花点钱买个wordpress空间折腾一下，念及自己去年
+的失败经历，花了钱却总共没写到十篇博客，今年也不敢保证，所以虽然钱不多却也不想浪费了，还是决定找个免费空间来用，但是这个免费空间一定要稳定、可靠。转了一圈也没发现满意
+的，正准备放弃时，看到了基于<a
+href="http://www.github.com">GitHub</a>和<a
+href="https://github.com/mojombo/jekyll">Jekyll</a>搭建博客的文章，正好满足自己的需求，经过一番折腾，算是将基本框架
+搭建起来了，下面就是我的折腾日记，也算作开篇吧。</p>
+<p>整个折腾过程大致可以分为以下几个部分：</p>
+<ul>
+<li>搭建基本环境</li>
+<li>绑定域名</li>
+<li>使用reStructuredText</li>
+</ul>
+<p>本篇博客主要讲的就是基本环境的搭建，不过需要说明的是，因为我使用的是Mac
+OS的系统，所以全部的步骤都是按Mac OS的情况来进行的。</p>
+<ol type="1">
+<li><p>基本运行环境</p>
+<p>由于GitHub
+Pages事实上是用Jekyll来生成的静态页面，所以我们在写博客时要遵守其规则，而为了测试是否确实符合，我们需要在自己的机器上按照Jekyll，而Jekyll实际上使用<a
+href="http://www.ruby-lang.org/zh_cn/">Ruby</a>
+写的一个工具，因此还需要<a
+href="http://www.ruby-lang.org/zh_cn/">Ruby</a>运行环境;又由于事实上整个博客就是一个<a
+href="http://git-scm.com">Git</a>仓库，所以还需要安装<a
+href="http://git-scm.com">Git</a>。 如果安装了<a
+href="https://github.com/mxcl/homebrew">Homebrew</a>的话就很好办了：</p>
+<pre><code>$ brew install ruby
+
+$ sudo gem install jekyll
+
+$ brew install git</code></pre></li>
+<li><p>注册<a href="http://www.github.com">GitHub</a>账号</p>
+<p>前往<a
+href="http://www.github.com">GitHub</a>，用自己喜欢的用户名注册一个账号，要注意的是，如果打算绑定到自己的域名上，那么注册的用户名要和打算绑定的域名一致才行。这步很简单，
+只要看得懂基本的英文就没问题了。</p></li>
+<li><p>安装Jekyll-Bootstrap</p>
+<pre><code>$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
+
+$ cd USERNAME.github.com
+
+$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
+
+$ git push origin master</code></pre>
+<p>这里的USERNAME就是你在<a
+href="http://www.github.com">GitHub</a>上所注册的用户名。这一步其实不是必需的，你完全可以按照<a
+href="http://net.tutsplus.com/tutorials/other/building%20-static-sites-with-jekyll">这里</a>的说明从零开始，但是使用Jekyll-Bootstrap的话可以让你的博客有一个不错的初始模板，再在这个基础上根据自己的需要进行修改就方便多了。完成之后，
+最多等个10分钟左右，访问USERNAME.github.com，应该就可以看到搭建好的博客首页了。</p></li>
+</ol>
+<p>参考文档</p>
+<ul>
+<li><a
+href="http://net.tutsplus.com/tutorials/other/building-static-sites-with-jekyll/">Building
+Static Sites with Jekyll</a></li>
+<li><a href="http://beiyuu.com/github-pages/">使用Github
+Pages建独立博客</a></li>
+<li><a href="http://jekyllbootstrap.com/">Jekyll-Bootstrap</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+      <tags>
+        <tag>jekyll</tag>
+        <tag>jekyllbootstrap</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IntelliJ Idea中开发Grails应用的几个问题</title>
+    <url>/2013/11/20/grails-intellij-debug/</url>
+    <content><![CDATA[<p>原来系统里安装的是IntelliJ IDEA 12和<a
+href="http://grails.org">Grails</a>
+2.2.4，开发、调试运行没有任何问题，最近<a
+href="http://grails.org">Grails</a> 2.3.2发布了，IntelliJ IDEA
+13的Beta版本也出来了，于是将两者都升级到了相应的最新版本，经过几天的使用后发现了两个问题：</p>
+<ol type="1">
+<li>在IDEA里以调试模式启动Grails应用后所设置的断点不起作用，程序运行到设置了断点的地方不会中断，而是继续执行</li>
+<li>在IDEA里点击停止按钮停掉后重新启动Grails应用，会报Address already in
+use的错误，用ps -ef | grep
+java查看，发现原来启动的Tomcat其实并没有被终止，而是仍然在运行</li>
+</ol>
+<p>我开始怀疑是由于安装了两个版本的IDEA，导致它们的配置冲突引起上述问题，于是将两个版本全部卸载掉，重新安装了IntelliJ
+IDEA
+12，发现问题依旧，于是上网搜索了一下，找到了答案，原来上述两个问题都是由于<a
+href="http://grails.org">Grails</a>的2.3版本引入了fork模式导致的，简单的说，当用2.3版本的Grails新建一个项目之后，在BuildConfig.groovy中有如下配置：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">grails.project.fork = [</span><br><span class="line">    <span class="comment">// configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required</span></span><br><span class="line">    <span class="comment">//  compile: [maxMemory: 256, minMemory: 64, debug: false, maxPerm: 256, daemon:true],</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// configure settings for the test-app JVM, uses the daemon by default</span></span><br><span class="line">    <span class="symbol">test:</span> [<span class="attr">maxMemory:</span> <span class="number">768</span>, <span class="attr">minMemory:</span> <span class="number">64</span>, <span class="attr">debug:</span> <span class="literal">false</span>, <span class="attr">maxPerm:</span> <span class="number">256</span>, <span class="attr">daemon:</span><span class="literal">true</span>],</span><br><span class="line">    <span class="comment">// configure settings for the run-app JVM</span></span><br><span class="line">    <span class="symbol">run:</span> [<span class="attr">maxMemory:</span> <span class="number">768</span>, <span class="attr">minMemory:</span> <span class="number">64</span>, <span class="attr">debug:</span> <span class="literal">false</span>, <span class="attr">maxPerm:</span> <span class="number">256</span>, <span class="attr">forkReserve:</span><span class="literal">false</span>],</span><br><span class="line">    <span class="comment">// configure settings for the run-war JVM</span></span><br><span class="line">    <span class="symbol">war:</span> [<span class="attr">maxMemory:</span> <span class="number">768</span>, <span class="attr">minMemory:</span> <span class="number">64</span>, <span class="attr">debug:</span> <span class="literal">false</span>, <span class="attr">maxPerm:</span> <span class="number">256</span>, <span class="attr">forkReserve:</span><span class="literal">false</span>],</span><br><span class="line">    <span class="comment">// configure settings for the Console UI JVM</span></span><br><span class="line">    <span class="symbol">console:</span> [<span class="attr">maxMemory:</span> <span class="number">768</span>, <span class="attr">minMemory:</span> <span class="number">64</span>, <span class="attr">debug:</span> <span class="literal">false</span>, <span class="attr">maxPerm:</span> <span class="number">256</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>为了解决我碰到的两个问题，需要将这一行</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">run:</span> [<span class="attr">maxMemory:</span> <span class="number">768</span>, <span class="attr">minMemory:</span> <span class="number">64</span>, <span class="attr">debug:</span> <span class="literal">false</span>, <span class="attr">maxPerm:</span> <span class="number">256</span>, <span class="attr">forkReserve:</span><span class="literal">false</span>],</span><br></pre></td></tr></table></figure>
+<p>注释掉。根据我的理解，也就是运行Grails应用时仍然在当前的JVM中运行，而不是fork出一个JVM来运行，这样第二个问题得到解决，要解决第一个问题，还要在为运行Grails应用的命令行加入-debug选项，如下图所示：
+[命令行配置](/images/intellij-debug.jpg)
+经过这些调整后上述两个问题都得到了解决。</p>
+<p>参考资料</p>
+<ol type="1">
+<li><a
+href="http://vasya10.wordpress.com/2013/09/29/intellij-idea-13-eap-and-grails-2-3-0/">IntelliJ
+Idea 13 EAP and Grails 2.3.0</a></li>
+<li><a
+href="http://devnet.jetbrains.com/message/5498220;jsessionid=637BBFE806169DA22453426D2C92E6E7#5498220">Grails
+2.3 breakpoints</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+      <tags>
+        <tag>Grails</tag>
+        <tag>IntelliJ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grails点滴（一）</title>
+    <url>/2013/11/25/grails-tip-1/</url>
+    <content><![CDATA[<p>在运行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grails test-app</span><br></pre></td></tr></table></figure> 时出现这样的错误信息： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java.lang.IllegalArgumentException: Property <span class="built_in">source</span> name must contain at least one character</span><br></pre></td></tr></table></figure>
+经过搜索，发现是因为将application.properties里的app.name的配置去掉了导致的，将app.name="xxx"添加上就不会出现这种错误了；</p>
+<p>另外一个问题是为了方便调试在一些测试代码中插入了一些临时性的println语句，但是在运行测试时却发现println语句输出的信息看不到，搜索后在<a
+href="http://www.stackoverflow.com">StackOverflow</a>上找到了答案，需要在运行测试代码的命令行
+上添加-echoOut参数： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grails test-app -echoOut</span><br></pre></td></tr></table></figure></p>
+<p>最后一个问题是运行grails test-app时出现下列错误信息： <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Fatal error running tests: Method on class [xx.xx.xx.Role] was used outside of a Grails application. If running <span class="keyword">in</span> the context of a <span class="built_in">test</span> using the mocking API or bootstrap Grails correctly.</span><br></pre></td></tr></table></figure>
+这个错误信息很奇怪，好在直接将这个错误信息google之后在<a
+href="http://www.stackoverflow.com">StackOverflow</a>上找到了答案，原来是因为没有加入hibernate插件的缘故，这个可是从错误信息一点都看不出来的:-(</p>
+<p>参考资料</p>
+<ol type="1">
+<li><a href="http://burtbeckwith.com/blog/?p=1973">Converting Grails
+Applications to Plugins and vice versa</a></li>
+<li><a
+href="http://stackoverflow.com/questions/2217873/grails-test-app-to-output-to-console">grails
+test-app to output to console</a></li>
+<li><a
+href="http://stackoverflow.com/questions/19599626/error-at-application-bootstrap-after-upgrade-to-grails-2-3-1">Error
+at application bootstrap after upgrade to grails 2.3.1</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+      <tags>
+        <tag>Grails</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grails点滴（二）</title>
+    <url>/2013/11/25/grails-tip-2/</url>
+    <content><![CDATA[<p>在继承一个第三方的实体类时出现这样一个问题，所继承的类已经定义了一个用作标识符的字段，类型为String，名字也叫做id：
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  String id</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+结果在对Child类进行持久化操作时就会出现Grails自动产生的id会覆盖掉父类定义的id字段，因此需要重新定义Child类的标识符：
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> mapping = &#123;</span><br><span class="line">    id <span class="attr">generator:</span> <span class="string">&#x27;assigned&#x27;</span>, <span class="attr">name:</span> <span class="string">&#x27;id&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考资料</p>
+<ol type="1">
+<li><a
+href="http://blog.paulopoiati.com/2011/10/04/grails-gorm-changing-default-id-name-and-type-from-an-entity/">Grails
+/ GORM: Changing default id name and type from an entity</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+      <tags>
+        <tag>Grails</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Grails点滴（三）</title>
+    <url>/2013/11/25/grails-tip-3/</url>
+    <content><![CDATA[<p>在进行Grails的开发时，我们经常需要查看GORM所产生的sql语句，需要在Datasource.groovy文件中加入下列配置：
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">dataSource &#123;</span><br><span class="line">  ...</span><br><span class="line">  logSql = <span class="literal">true</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+为了让输出的sql语句清晰好读，还可以进行进一步配置，即在Datasource.groovy中加入：
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">hibernate &#123;</span><br><span class="line">  ...</span><br><span class="line">  format_sql = <span class="literal">true</span></span><br><span class="line">  use_sql_comments = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+但是有的时候我们不仅需要查看生成的sql语句，还需要查看在执行sql语句时实际传入的参数，这时需要在Config.groovy文件中加入下列配置信息：
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">log4j = &#123;</span><br><span class="line">  debug <span class="string">&quot;org.hibernate.SQL&quot;</span></span><br><span class="line">  trace <span class="string">&quot;org.hibernate.type.descriptor.sql.BasicBinder&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+经过以上这些配置后就能很方便的查看生成的sql语句及其参数了。</p>
+<p>参考资料</p>
+<ol type="1">
+<li><a href="http://manning.com/gsmith2/">《Grails in Action, 2nd
+Edition》</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+      <tags>
+        <tag>Grails</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac生活（一）—— Yosemite的召唤</title>
+    <url>/2014/06/18/mac-life---yosemite/</url>
+    <content><![CDATA[<p>本月的3号，苹果的WWDC
+2014开始了，当时我还苦逼地在火车上摇啊摇，用时断时续的3G信号马马虎虎地了解了新发布的Yosemite的新特性之后心中一阵激动。等到好不容易终于摇到家里，顾不上休息，打开电脑就开始升级，一切顺利，除了在最后显示1
+minute
+remaining那里实际停留了一个多小时之外，重启，顺利进入新系统。哇，界面给人的感觉还是很舒服的，哇，居然有毛玻璃效果了，哇......等等，怎么bartender弹出对话框说，对不起，它歇菜了，因为调用了私有的API，在Yosemite中挂掉了；启动CleanMyMac
+2，这货吭都没吭，直接崩溃了；打开iBooks，点击搜索，崩溃了......虽然有这样那样的问题，但是Yosemite和iOS
+8的整合还是让我舍不得放弃，还是继续坚持使用，倒也没什么其它大问题，直到第二天我到了办公室很愉快地打开电脑准备工作的时候悲剧了：系统启动到登录界面之后，苹果那可爱的彩球就一直飘啊飘，在google上翻了一阵也没见有什么有用的信息，只好又重新装回Mavericks，用的覆盖安装的方式，结果各种小问题，比Yosemite还不稳定，只好将盘格掉全新安装。然后几天后，在<a
+href="http://www.v2ex.com">v2ex</a>上看到了解决登录界面卡住问题的<a
+href="http://www.v2ex.com/t/116066">帖子</a>，真是欲哭无泪啊，怎么不早点贴出来呢......
+<span id="more"></span> 今天一大早睁眼一看，iOS 8 Beta
+2和Yosemite的DP2都出来了，iOS 8 Beta
+2增加了来电归属地的功能，忍受不住诱惑，又将最新的iOS
+8和Yosemite下载下来进行更新，貌似比上一个版本稳定多了，而且一些原来不兼容的软件也及时推出了更新的版本，但是当我很手贱地打开Trim
+Enabler并重启之后又悲剧了，这次连登录界面都没看到，直接卡在白色背景的启动界面上了，好在有了上一次的经验，也没太慌张，我猜测十有八九是因为打开了Trim
+Enabler的缘故，于是准备进入单用户模式将其禁止掉。先重启机器，按Command +
+S，准备进入单用户模式，但是在出现Still waiting for root
+device之后就没动静了。在网上翻来翻去，终于找到了<a
+href="http://www.cindori.org/forums/topic/heads-up-osx-10-10-beta-no-go/">Heads
+up - OSX 10.10 Beta -no
+go</a>，按照里面的方法终于解决了问题，其实就是这么简单几步：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -rf /Volumes/&lt;10.10 Partition&gt;/System/Library/Extensions/IOAHCIFamily.kext</span><br><span class="line">cp -r /System/Library/Extensions/IOAHCIFamily.kext /Volumes/&lt;10.10 Partition&gt;/System/Library/Extensions/IOAHCIFamily.kext</span><br><span class="line">touch /Volumes/&lt;10.10 Partition&gt;/System/Library/Extensions</span><br><span class="line">kextcache -u /Volumes/&lt;10.10 Partition&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>谁打开了我的文件-lsof来帮忙</title>
+    <url>/2014/08/28/lsof/</url>
+    <content><![CDATA[<p>有时当我们删除一个文件时会报文件正被占用，无法删除，在Mac中具体会报“OSStatus错误-47”的信息。原来我碰见这种情况一般都是要么重启要么将所有应用关掉，也没去深究，今天又碰到这个问题，为了清楚究竟是谁在占用我的文件，于是研究了一下，发现可以用lsof命令列出已打开的文件和打开它们的进程，但是只运行lsof命令只会输出所有已打开的文件，信息很多，并不方便我们查看，<span id="more"></span>于是我又运行了一下“man
+lsof”看了一下lsof的文档，发现通过+d选项可以指定查看具体哪个目录，于是运行
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsof +d target</span><br></pre></td></tr></table></figure> 会产生这样的输出： <img
+src="http://glfruit.qiniudn.com/blog/img/lsof.png"
+alt="lsof +d target的输出" />
+第一列显示的就是哪一个命令打开了我们的文件，第二列就是对应的PID了，接下来就简单了，直接运行
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> pid</span><br></pre></td></tr></table></figure> 现在再去删文件，整个世界是不是清静了？</p>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo简介</title>
+    <url>/2015/03/31/migrate-from-jekyll-to-hexo/</url>
+    <content><![CDATA[<p>话说最近我终于提起精神看了一眼许久没有打理的博客，除了篇数少得可怜之外，时间也还停留在2013年，实在有点惭愧，于是振作精神，决定还是要继续将博客坚持下去。我原来是基于Jekyll
+Bootstrap + GitHub Pages搭建的，感觉也还不错，但是Jekyll
+Bootstrap现在已经停止开发了，在它的开发页面上推荐使用ruhoh，搜索了一下，很多都吐槽说文章多了生成速度慢，于是也放弃了。最后看到了一个推荐得比较多的hexo，觉得还不错，是用NodeJS开发的，而自己对NodeJS也比较有兴趣，于是开始动手将博客从Jekyll迁移到Hexo，以下步骤均在Mac
+Os Mavericks和<a href="http://brew.sh">Homebrew</a>环境下完成。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>如果原来使用过其它的工具来使用Git
+Pages进行博客写作的话需要进行一下备份的工作，避免出现数据丢失的现象：
+<span id="more"></span> ### 备份 1. 将原来的博客git仓库备份 2.
+将GitHub上原来的博客git仓库删除掉（当然也可以不删，和新创建的博客git仓库进行合并就可以了，但是会发生很多冲突，太麻烦，还不如直接删掉重建来得方便）
+3. 在GitHub上新建git仓库USERNAME.github.com</p>
+<h3 id="安装配置基本运行环境">安装配置基本运行环境</h3>
+<ol type="1">
+<li><p>安装Git <figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure></p></li>
+<li><p>安装NodeJS <figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure></p></li>
+<li><p>安装Hexo <figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="基本配置">基本配置</h2>
+<h3 id="创建博客">创建博客</h3>
+<figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">;; 创建博客并进入该目录</span><br><span class="line">hexo init myblog &amp;&amp; cd myblog</span><br></pre></td></tr></table></figure>
+<h3 id="基本站点信息配置">基本站点信息配置</h3>
+<p>打开根目录下的_config.yml文件，根据自己的情况更改相应的信息，主要是下面几项：
+<figure class="highlight plaintext"><figcaption><span>yml</span></figcaption><table><tr><td class="code"><pre><span class="line">title: 你的博客站点名称</span><br><span class="line">subtitle: 子标题</span><br><span class="line">description: 博客站点的描述</span><br><span class="line">author: 作者名字</span><br><span class="line">email: 联系email</span><br><span class="line">language: zh-CN # 语言选项，我当然设置为中国了</span><br></pre></td></tr></table></figure></p>
+<h3 id="主题配置">主题配置</h3>
+<p>在Hexo的项目主页上提供了许多主题，默认的是landscape主题，但是一看到上面大大的一幅图片我就觉得堵得慌，我还是比较喜欢自己原来Jekyll
+Bootstrap提供的那种清爽、简洁的主题风格，可惜找了一圈都没找到，暂时先用了一个iOS7的主题，回头深入研究一下，自己改造一个吧。
+1. 安装主题 <figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/tracy-e/hexo-theme-iOS7.git themes/iOS7</span><br></pre></td></tr></table></figure></p>
+<ol start="2" type="1">
+<li>配置主题 打开themes/iOS7下的_config.yml文件，进行如下修改：</li>
+</ol>
+<ul>
+<li>菜单名称。将menu下的英文菜单名称修改为中文</li>
+<li>Widget。我将默认添加的weibo去掉了，因为我试了一下，觉得挂在默认的位置实在不怎么样，而暂时也不太想费太多时间去调整</li>
+<li>更改weibo下的配置。 <figure class="highlight plaintext"><figcaption><span>yml</span></figcaption><table><tr><td class="code"><pre><span class="line">Weibo:</span><br><span class="line">name: 你的名字 # 一定要配置，否则每篇文章下默认添加的”Posted by xxx”就变成”Posted by null”了</span><br><span class="line">uid: ## 微博的用户ID？不怎么明白，空着也没事</span><br><span class="line">link: ## 你的微博链接地址</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="自定义域名">自定义域名</h3>
+<p>在Jekyll中直接在根目录下创建一个CNAME文件即可，而在Hexo中必须将该文件放在source目录中</p>
+<h2 id="基本用法">基本用法</h2>
+<h3 id="创建项目">创建项目</h3>
+<figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="创建页面">创建页面</h3>
+<figure class="highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo new post “post name”</span><br><span class="line">hexo new draft “draft name”</span><br></pre></td></tr></table></figure>
+<h3 id="部署">部署</h3>
+<p>这里和Jekyll不一样，我最开始想当然的直接将整个git仓库push到远端，结果当然是什么都没有，后来才发现是要在_config.yml中配置deploy选项，然后运行hexo
+deploy即可。</p>
+<h2 id="从jekyll到hexo的转换">从Jekyll到Hexo的转换</h2>
+<h3 id="文件名格式">文件名格式</h3>
+<p>在_config.yml中更改new_post_name选项</p>
+<h3 id="语法高亮">语法高亮</h3>
+<p>从{% highlight groovy %}切换为{% codeblock lang:groovy %}</p>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li><a
+href="http://ibruce.info/2013/11/22/hexo-your-blog/">Hexo你的博客</a></li>
+<li><a href="http://hexo.io/docs/index.html">Hexo官方文档</a></li>
+<li><a
+href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages">Setting
+up a custom domain with GitHub Pages</a></li>
+<li><a
+href="https://help.github.com/articles/my-custom-domain-isn-t-working">My
+custom domain isn’t working</a></li>
+<li><a href="http://snger.github.io/2013/12/31/hello-hexo/">Hello
+Hexo</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>忘掉设置目标，专注于此</title>
+    <url>/2017/03/19/forget-about-setting-goals/</url>
+    <content><![CDATA[<p><a href="http://jamesclear.com/goals-systems">原文：Forget About
+Setting Goals. Focus on This Instead.</a></p>
+<p>在我们的一生中，我们都有所渴望得到的东西，例如身材更有型，开创一门成功的生意，供养一个很棒的家庭，写作一本畅销书，赢得一个冠军等等。</p>
+<p>对我们大多数人而言，通向这些东西的路径起始于设定一个具体而又能付诸实施的目标。至少直到最近我都是这么干的。我会为上的课程设定目标，为我在健身房能举起的重量设定目标，为我在生意中想要获得的客户设定目标。</p>
+<p>但是，我开始意识到，当我们真正开始在对我们而言重要的领域完成任务并取得进展时，事实上有更好的方式来做到这一点。</p>
+<p>这其中的关键，在于目标和系统的差别。 <span id="more"></span></p>
+<p>下面我来解释一下。</p>
+<figure>
+<img
+src="http://jamesclear.com/wp-content/uploads/2013/10/systems-vs-goals-700x467.jpg"
+alt="goals-vs-systems" />
+<figcaption aria-hidden="true">goals-vs-systems</figcaption>
+</figure>
+<h2 id="目标与系统之间的差别">目标与系统之间的差别</h2>
+<p>目标和系统之间有什么不同呢？ -
+<strong>如果你是一个教练</strong>,你的目标是获得冠军。你的系统就是你的团队每天练习的东西。
+-
+<strong>如果你是一个作家</strong>，你的目标是写一本书。你的系统就是你每周所遵循的写作计划。
+-
+<strong>如果你是一个跑步者</strong>，你的目标是跑马拉松。你的系统就是这个月的训练计划。
+-
+<strong>如果你是一个企业家</strong>，你的目标是开创一门百万美元价值的生意。你的系统就是你的销售和营销过程。</p>
+<p>那么真正令人感兴趣的问题就是： &gt;
+如果你完全忽略掉你的目标，只是专注于你的系统，那么你仍然能得到预期的结果吗？</p>
+<p>例如，如果你是一个篮球教练，忽略掉赢取冠军的目标，只是专注于你的团队每天练习的东西，你仍然能得到预期的结果吗？</p>
+<p>我认为你能。</p>
+<p>作为一个例子，我对今年写的文章的字数进行了一个统计（你可以在<a
+href="http://jamesclear.com/best-articles">这里</a>读到它们。）在过去的12个月中，我写了超过115,000个单词。一般一本书的单词数在50,000到60,000之间，
+所以我今年写了相当于两本书的东西。</p>
+<p>这真的让我觉得惊奇，因为我从未为我的写作设定过目标。我没有根据某个基准来衡量我的进度。我从未为某一篇文章设定过字数目标。我从来没有说过，“我今年要写两本书”。</p>
+<p>我真正专注的就是每个星期一和星期四写一篇文章。在坚持整个计划11个月之后，结果就是115,000个单词。我专注于我的系统以及完成工作的过程。最终，我享受到了（或者可能更好的）结果。</p>
+<p>在我们谈论如何开始之前，我想让你知道，我研究过关于坚持好的习惯，停止拖延的有科学依据的方式，并且将它们汇编成册。想要了解我的心得吗？<a
+href="javascript:void(0);">在这里下载我的免费PDF指南“改变你的习惯”</a></p>
+<p>让我们来谈谈为什么你应当专注于系统而不是目标的另外三个理由。</p>
+<h3 id="目标降低了你当前的幸福度">目标降低了你当前的幸福度。</h3>
+<p>当你朝着一个目标努力的时候，你事实上是在说，“我还仍然不够好，但是当我达到我的目标的时候，我就会了”。</p>
+<p>这种心态的问题在于你在训练自己总是将幸福和成功推迟到达到下一个里程碑的时候。“一旦我达到我的目标，那么我就会快乐了。一旦我达到我的目标，那么我就是成功的了”。</p>
+<p><strong>解决办法：致力于过程中，而不是目标。</strong></p>
+<p>选择一个目标会在你的肩上放上一个巨大的负担。你能想象如果我将今年写两本书作为我的目标吗？光是写下那句话就让我很紧张了。</p>
+<p>但是我们总是对我们自己这样做。我们将不必要的压力放在自己身上以减肥，或者在生意上获得成功，或者写一本畅销书。相反，你可以通过将注意力放在每天的过程和坚持计划来让事情保持简单，而不是担忧那些庞大的、改变人生的目标。</p>
+<p>当你的注意力几种在实践而不是绩效上时，你就能够享受当下，同时还能提高。</p>
+<h3
+id="目标会奇怪地与长期的进展发生冲突">目标会奇怪地与长期的进展发生冲突。</h3>
+<p>你可能认为目标会让你长期保持动力，但是事实并不总是那样。</p>
+<p>让我们想象有一个跑半程马拉松的人。许多人会努力锻炼数月，但是一旦他们完成比赛之后，就停止训练了。他们的目标就是完成半程马拉松，既然他们已经完成了，那个目标也就不再激励他们了。当你的所有努力都集中在一个具体的目标之上时，当你达到那个目标之后推动你向前的又是什么呢？</p>
+<p>这会产生一种称作“溜溜球效应”的东西，即人们在完成一个目标与没有完成一个目标之间来回切换。这种类型的循环让你的进步很难长期保持。</p>
+<p><strong>解决方法：不要要求马上有结果</strong>
+我上周在健身房训练，当时正在做倒数第二组挺举，突然感到腿上一阵刺痛。这并不是一种伤痛，只是在我训练快结束时的一种疲劳的标志。大概有一两分钟，我在考虑将最后一组昨晚。然后我提醒自己以后还会一直做这种训练，于是就决定结束了。</p>
+<p>在上述这种情况下，基于目标的心态就会告诉你完成训练以达到目标。毕竟，如果你设置了一个目标而又没有达到的话你会觉得是一种失败。</p>
+<p>但是如果心态是基于系统的话，我不会觉得不完成有任何问题。基于系统的思考方式绝不是关于达到一个具体的数字，而是坚持过程，不要错过锻炼。</p>
+<p>当然，我知道如果我从来不错过一次锻炼的话，长期来看我就能举起更多的重量。这就是为什么系统比目标更有价值。目标是关于短期结果的。系统是关于长期过程的。最终获胜的总是过程。</p>
+<h3
+id="目标会向你暗示你能控制自己实际上不能控制的东西">目标会向你暗示你能控制自己实际上不能控制的东西</h3>
+<p>你无法预测未来。（我知道，这令人震惊。）</p>
+<p>但是每次我们设置一个目标的时候，我们就会尝试去完成它。我们会尝试计划将来我们会到达什么样的地步，什么时候能到达。我们会尝试预测我们能够多快取得进展，即使我们不知道沿途究竟会出现什么样的状况。</p>
+<p><strong>解决方法：建立反馈回路</strong>
+每个星期五，我都会花15分钟时间在一张电子表格中填写关于我的业务的最为重要的度量值。例如，有一列我用来计算转化率（访问我的网站的用户中每周加入我的免费电子邮件简报的比例）。我很少考虑这个数字，但是每周检查它向我提供了一个反馈回路，告诉我是否做得正确。当那个数字下降的时候，我知道我需要让我的网站的拥有高质量的流量。</p>
+<p>反馈回路对于构建好的系统是很重要的，因为它们允许你追踪许多方面而不会有压力要去预测将会发生什么。忘记预测未来，构建一个在你需要调整时能够提供信号的系统。</p>
+<h3 id="爱上系统">爱上系统</h3>
+<p>以上这些并不意味着目标毫无用处。但是，我发现目标适用于进度规划，而系统则有利于实际取得进展。</p>
+<p>目标能提供方向，甚至在短期内推动你前进，但是最终获胜的肯定是一个设计良好的系统。重要的是有一个系统。专注于过程才会产生差别。</p>
+]]></content>
+      <categories>
+        <category>个人成长</category>
+      </categories>
+      <tags>
+        <tag>个人管理</tag>
+        <tag>目标管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Swift初印象</title>
+    <url>/2014/06/04/swift/</url>
+    <content><![CDATA[<p>一年一度的WWDC开始了，除了虽然没有亮瞎我的双眼但也很吸引我的OS X
+Yosemite（iCloud Drive是我期待很久的功能了）以及iOS
+8之外，最让人感兴趣的当然就是苹果新推出的Swift语言了。由于还没有看WWDC
+2014的Keynote，于是我先在网上搜索了一下关于Swift的一些评价，结果和任何一种新事物一样，网上对它的评价褒贬不一，有人认为它是很棒的Objective-C的替代者，也有人认为它是一个脆弱的玩具语言，压根儿就不是用来干正事的。看来从这些口水仗里看不出什么东西来了，还是自己动手，亲自实践一下吧。
+<span id="more"></span> ## 初步印象 我到iBooks上下载了《Swift The Programming
+Language》，花了一点时间迅速把第一部分“Welcome to
+Swift”浏览了一遍，简单来说有两个总的感觉，一个是并没有什么让我特别兴奋的点，但是其实很多特性还是不错的，不过其它语言里已经有了，Swift应该算是从它们那里借鉴过来的；这个感觉直接导致了我另外一个感觉，这货真是个杂交品种：
+- C#的痕迹：getter，setter的定义
+Lisp的痕迹：在方法中通过参数的位置来直接访问参数以及Conditional If
+Hashkell的痕迹：函数的定义方式 Groovy的痕迹：Dictionary的创建</p>
+<p>看看苹果对它的定位： Swift has been years in the
+making.(憋大招憋了很久了）Apple laid the foundation for Swift by
+advancing our existing compiler, debugger, and framework infrastructure.
+（这得是下了多大的一盘棋啊） “It is the first industrial-quality systems
+programming language that is as expressive and enjoyable as a scripting
+language.”（自信满满） It’s designed to scale from “hello world” to an
+entire operating
+system.（明确告诉你，用来开发操作系统都不成问题，别以为哥真的是玩具语言）
+The compiler is optimized for performance, and the language is optimized
+for development, without compromising on
+either.（哥已经很实用了，不光是用着爽，跑起来性能也不差）</p>
+<p>关键是它能够统一地将它们融合起来，其实这也是苹果这几年一直在干的事：整合。很多人吐槽说苹果的创新越来越少，但是事实上一直都有，只是并不是每次都显得那么引人注目而已。</p>
+<h2 id="比较有意思的东西">比较有意思的东西</h2>
+<ol type="1">
+<li>OptionalValue</li>
+<li>Willset Didset</li>
+<li>Playgrounds</li>
+</ol>
+<p>有人抨击它的一点就是没有异常处理，我看了看，貌似确实没看到，不过，需要吗？
+以上就是对Swift的惊鸿一瞥，看来还是有把玩的价值的，后续再慢慢写吧</p>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用Zotero做科研（五）——与Scrivener的整合</title>
+    <url>/2015/12/27/zotero-series-5/</url>
+    <content><![CDATA[<p>通常我的写作都是在Scrivener里面进行，它跨平台，对于写作素材的搜集和管理也十分方便，但是用在写论文时有个最大的问题，就是不能像在Word里面一样方便地添加文献引用。虽然也有折衷的办法，像<a
+href="https://danielvreeman.com/using-scrivener-for-writing-scientific-papers/">这篇文章</a>里的方法，我的上一篇论文就是采取这种方式完成的，可是觉得繁琐，而且还要装个不想干的LireOffice。几天前心血来潮又开始新的折腾的时候，发现了<a
+href="http://davepwsmith.github.io/academic-scrivener-howto/">这篇文章</a>，按照其中的步骤进行配置，又根据自己的环境进行了调整，总算是实现了在Scrivener里一键插入文献引用的功能，并且又根据里面的AppleScript脚本依样画葫芦，用PowerShell实现了一个Windows版的脚本，这样在Windows上也可以实现同样的效果了。
+<span id="more"></span> 下面就是详细的折腾步骤：</p>
+<p>首先下载安装Zotero的<a
+href="https://zotplus.github.io/better-bibtex/">Better
+BibTex插件</a>；安装好之后在Zotero里使用该插件将文献库导出，导出时最好勾选上Keep
+Updated选项，这样当你更新文献库时对应的BitTex文件也会自动更新；</p>
+<p>然后安装Pandoc，我用的<a
+href="http://brew.sh">HomeBrew</a>管理安装，因此直接用它安装pandoc和它的一个插件pandoc-citeproc：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install pandoc   </span><br><span class="line">brew install pandoc-citeproc</span><br></pre></td></tr></table></figure> 安装好pandoc后还要做的一件事情就是去<a
+href="https://www.zotero.org/styles/chinese-gb7714-2005-numeric">这里</a>下载中文的样式，并且将它放在自己的用户目录的.csl目录下，pandoc默认是在这个位置搜索样式文件，当然你也可以根据自己的喜好配置pandoc去其它地方搜索。</p>
+<p>这样之后就可以开始在Scrivener里面用pandoc支持的Markdown语法撰写文章了，但是这不是重点，我们的重点是要能在Scrivener里方便地一键引用文献，所以我们还需要下载一个<a
+href="https://github.com/davepwsmith/zotpick-applescript">AppleScript文件</a>，将它放在你喜欢的地方，然后打开Scrivener，将文献管理器设置为该文件。当然你如果直接设置的话会发觉无法将该文件设置为文献管理器，需要将它打包成一个应用的形式才行，打包的方法在上面的链接里已经提供了，我就不多说了。完成这一步之后，当你在Scrivener里写作需要引用文献时只需要按下Cmd+Y键，一个供你搜索插入文献的对话框就出现了，真的是十分的方便。
+完成写作之后当然就是发布了，这时我们只需要运行下面这条命令就可以生成Word文档了：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pandoc -s -S --normalize --bibliography \ ~/.pandoc/YOUR_BIBLIOGRAPHY.bib \ --csl ~/.csl/YOUR_CITATION_STYLE.csl \ -f markdown -t docx \ -o MYPROJECT.docx MYPROJECT.txt</span><br></pre></td></tr></table></figure>
+其中YOUR_BIBLIOGRAPHY.bib是你导出的BibTex文件的名字，YOUR_CITATION_STYLE.csl是所选择的样式文件的名字。完成之后，一篇样式精美的论文也就生成了。</p>
+<h3 id="windows下的设置">Windows下的设置</h3>
+<p>基本步骤和在Mac上差不多，只是不能用前面提供的AppleScript文件作为文献管理器，而是需要把<a
+href="https://gist.github.com/glfruit/6e7218abb6a1449d4016">Set-ActiveWindow.ps1</a>和<a
+href="https://gist.github.com/glfruit/3bd34f4e5d29c4c80bcc">zotpick-pandoc-win.bat</a>这两个文件下载下来，放在同一个地方，然后在Scrivener里将zotpick-pandoc-win.bat文件设置为其文献管理器就可以了。</p>
+<h3 id="注意事项">注意事项：</h3>
+<ul>
+<li>Zotero必须保持打开状态</li>
+<li>搜索框里无法直接搜索中文文献，要切换到经典视图才行，无论是Mac还是Windows都是一样</li>
+</ul>
+<h3 id="遗留问题">遗留问题：</h3>
+<p>中文啊，还是中文，在弹出的搜索框里输入中文没有任何反应，只有切换到经典视图才能进行中文搜索，算是美中不足吧。原来以为是脚本的问题，经测试发现是Better
+Latex插件的问题，怎么解决还不知道</p>
+<h3 id="参考资料">参考资料：</h3>
+<ol type="1">
+<li><a
+href="http://davepwsmith.github.io/academic-scrivener-howto/">Scrivener
+for academic writing with Zotero</a></li>
+<li><a
+href="http://blogs.technet.com/b/heyscriptingguy/archive/2011/01/10/provide-input-to-applications-with-powershell.aspx">Provide
+input to applications with PowerShell</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+      <tags>
+        <tag>Zotero</tag>
+        <tag>Scrivener</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Hexo创建博客站点</title>
+    <url>/2018/02/22/create-a-blog-using-hexo/</url>
+    <content><![CDATA[<p><strong>更新日志</strong>
+<em>2018年3月1日：添加不蒜子统计和Google分析配置</em></p>
+<p><a
+href="https://hexo.io">Hexo</a>是一个老牌的博客写作与管理工具，我从<a
+href="https://github.com/mojombo/jekyll">Jekyll</a>迁移到<a
+href="https://hexo.io">Hexo</a>也有五六年的时间了，虽然博客没写几篇（写作也是个体力活啊），但是断断续续也在维护，只是开始用<a
+href="https://hexo.io">Hexo</a>时还是2.x的版本，后来升级到3.x版本，使用过程中始终有些小问题，而且因为我有多台电脑，如何在多台电脑之间维护管理博客也是一个问题，一直没有认真去解决，这次趁着春节放假，离上班还有几天时间，就把整个博客仓库清理了一遍，把遗留的问题也都解决了，把整个过程记录下来，以做备忘。
+<span id="more"></span></p>
+<h2 id="基本安装和配置">基本安装和配置</h2>
+<h3 id="hexo的安装和配置">hexo的安装和配置</h3>
+<p><a
+href="https://hexo.io">Hexo</a>自身的安装其实很简单，一行命令就完成了：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure> 但是在运行这行命令之前还必须安装<a
+href="https://hexo.io">Hexo</a>所依赖的两个工具： <a
+href="https://nodejs.org">Node.js</a> <a
+href="https://git-scm.com">Git</a> 这些工具以及<a
+href="https://hexo.io">Hexo</a>的基本安装在H<a
+href="https://hexo.io/zh-tw/docs/">官方文档</a>里已经说得很详细了，这里也就不再赘述了。</p>
+<h3 id="创建博客站点">创建博客站点</h3>
+<h4 id="创建git仓库">创建Git仓库</h4>
+<p>其实这一步不是必须的，但是出于备份（谁也不想自己辛辛苦苦写的东西一夜之间就没了）和同步（需要在多台电脑写作和同步博客内容及配置的话，这种情况现在并不少见）的考虑，我们最好还是使用版本控制工具将所写的内容和<a
+href="https://hexo.io">Hexo</a>的配置管理起来。由于一般使用<a
+href="https://hexo.io">Hexo</a>的话都会将博客部署到<a
+href="https://pages.github.com/">GitHub
+Pages</a>，所以我们这里选择使用<a
+href="https://github.com">GitHub</a>来托管我们的博客内容。 首先要在<a
+href="https://github.com">GitHub</a>上创建一个xxx.github.io的仓库（这里xxx为你的GitHub用户名，如果没有GitHub账户的话就自己注册一个）；
+然后在本地检出这个仓库： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/xxx/xxx.github.io</span><br><span class="line">cd xxx.github.io</span><br></pre></td></tr></table></figure> 现在这还是一个空仓库，通过运行
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+可以看到现在只有一个master分支，我们不对这个分支进行任何修改，而是新创建一个分支，例如叫做hexo：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure>
+这样就创建并切换到了新的hexo分支，我们的站点配置管理和博客写作都将在这个分支上进行。博客目录下会有一个隐藏的叫做.git的文件夹，我们先将其移动到其它地方。</p>
+<h4 id="初始化">初始化</h4>
+<p>进入博客目录，并使用Hexo进行初始化： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd xxx.github.io</span><br><span class="line">hexo init</span><br><span class="line">hexo install</span><br></pre></td></tr></table></figure></p>
+<h4 id="基本配置">基本配置</h4>
+<p>打开_config.yml文件，根据自己的情况修改以下几项： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: A Blog # 博客站点的名称</span><br><span class="line">subtitle: Blog Subtitle # 博客站点的副标题</span><br><span class="line">description:</span><br><span class="line">author: Somebody # 作者名称</span><br><span class="line">language: zh-CN # 站点语言</span><br><span class="line">timezone: Asia/Shanghai # 时区</span><br></pre></td></tr></table></figure> 运行
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure> 使用浏览器访问 http://localhost:4000
+应该就能看到博客的首页了。</p>
+<h3 id="主题的安装和配置">主题的安装和配置</h3>
+<p>选择一个自己喜欢的主题，我选择的主题是<a
+href="https://theme-next.org/">next</a>，下面以这个主题为例来描述如何安装和配置主题。
+首先将前面移走的.git目录移回博客目录下，这样博客目录里面的内容才会被Git管理起来；
+然后访问选定主题的GitHub页面，将其fork到自己的账户下；
+第三步将主题的git仓库fork到自己的账户下： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git submodule add https://github.com/theme-next/hexo-theme-next.git</span><br></pre></td></tr></table></figure>
+打开博客目录下的_config.yml文件，修改下面一行： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: my-next</span><br></pre></td></tr></table></figure></p>
+<p>【注】: 关于如何Fork以及同步Fork，请参考<a
+href="https://help.github.com/articles/fork-a-repo/">Fork A Repo</a></p>
+<h3 id="部署到gitpages">部署到GitPages</h3>
+<p>用 <a
+href="https://hexo.io">Hexo</a>创建的博客可以有多种部署方式，最常见的就是部署到GitPages，免费又好用。要部署到GitPages，我们需要完成以下几个步骤：
+1.
+在source目录下创建一个名为CNAME的文件，在里面加入自己注册好的域名，例如example.domain，然后通过
+<a
+href="https://www.dnsprod.cn">DNSPod</a>之类的DNS解析服务商将域名解析道对应的GitPages地址。
+2. 安装git部署器，以便部署到github <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure> 3.
+将博客部署到GitPages: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<h3 id="电脑之间的同步">电脑之间的同步</h3>
+<p>如果新电脑上还没有检出博客，则先执行检出操作并切换到hexo分支并进行更新：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout https://www.github.com/xxx/xxx.github.io</span><br><span class="line">git fetch</span><br><span class="line">git checkout hexo</span><br><span class="line">git submodule update --init</span><br><span class="line">npm install --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>如果已经检出了博客，则直接运行更新命令即可： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git submodule update</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用插件">常用插件</h2>
+<h3 id="不蒜子统计">不蒜子统计</h3>
+<p>不蒜子是一个可以统计站点和页面访问量的工具，在最新的next主题中的配置相当简单，只需要打开主题的_config.yml文件，找到busuanzi_count，将enable设置为即可。如果还需要站点的UV数，直接在busuanzi_count下面添加如下配置即可：
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">site_uv: true</span><br><span class="line">site_uv_header: 本站访客数</span><br><span class="line">site_uv_footer: 人次</span><br></pre></td></tr></table></figure></p>
+<p>设置站点的PV数： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">site_pv: true</span><br><span class="line">site_pv_header: 本站总访问量</span><br><span class="line">site_pv_footer: 次</span><br></pre></td></tr></table></figure></p>
+<p>设置单页面的PV数： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">page_pv: true</span><br><span class="line">page_pv_header: 本文总阅读量</span><br><span class="line">page_pv_footer: 次</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li><a href="https://segmentfault.com/a/1190000011535121">Github pages +
+hexo博客搭建教程</a></li>
+<li><a
+href="http://fenglu.me/2016/08/12/How-to-setup-a-hexo-based-blog-Part-2/">How
+to setup a hexo-based blog: Part 2</a></li>
+<li><a
+href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html">打造个性超赞博客Hexo+NexT+GithubPages的超深度优化</a></li>
+<li><a
+href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">Using
+a custom domain with GitHub Pages</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ASP.NET Core Razor Pages入门（一）</title>
+    <url>/2020/01/04/razor-pages-tutorial-1/</url>
+    <content><![CDATA[<h1 id="asp.net-core-razor-pages入门一">ASP.NET Core Razor
+Pages入门（一）</h1>
+<p><a
+href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&amp;tabs=visual-studio">原文地址</a></p>
+<p><strong>注：</strong>本文及后续的系列文章是我对<a
+href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1&amp;tabs=visual-studio">Tutorial:
+Get started with Razor Pages in ASP.NET
+Core</a>的中文翻译和补充。之所以内容上会有所补充，是由于.NET
+Core版本升级的关系，原文代码中引用的一些类和方法的命名空间已经发生了变化，按照原文所给的源代码是无法顺利运行的，因此我进行了修正补充，以使得示例代码能够顺利运行。</p>
+<p>在本教程中，你将： - 创建一个Razor Pages的Web应用 - 运行该应用 -
+查看项目文件</p>
+<p>教程结束后，你将拥有一个可以用于后续教程中的可以工作的Razor Pages
+web应用。 <img
+src="https://raw.githubusercontent.com/glfruit/pic_bed/master/20191228085608.png" />
+<span id="more"></span> ## 先决条件 ### Visual Studio - <a
+href="https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&amp;utm_source=docs.microsoft.com&amp;utm_campaign=inline+link&amp;utm_content=download+vs2019">Visual
+Studio 2019 16.4或之后的版本</a>,加载有ASP.NET和Web开发workload - <a
+href="https://dotnet.microsoft.com/download/dotnet-core/3.1">.NET Core
+3.1 SDK或之后的版本</a></p>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<ul>
+<li><a href="https://code.visualstudio.com/download">Visual Studio
+Code</a></li>
+<li><a
+href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp">C#
+for Visual Studio Code(最新版本)</a></li>
+<li><a href="https://dotnet.microsoft.com/download/dotnet-core/3.1">.NET
+Core 3.1 SDK或之后的版本</a></li>
+</ul>
+<h2 id="创建razor-pages-web应用">创建Razor Pages web应用</h2>
+<h3 id="visual-studio-code-1">Visual Studio Code</h3>
+<ul>
+<li><p>打开内部终端</p></li>
+<li><p>运行下列命令： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dotnet new webapp -o RazorPagesMovie</span><br><span class="line">code -r RazorPagesMovie</span><br></pre></td></tr></table></figure></p></li>
+<li><p><code>dotnet new</code>命令在RazorPagesMovie文件夹中创建一个新的Razor
+Pages项目</p></li>
+<li><p><code>code</code>命令在Visual Studio
+Code中打开RazorPagesMovie文件夹</p></li>
+<li><p>在状态栏的OmniShapr图标变为绿色之后，会弹出一个对话框，显示"Required
+assets to build and debug are missing from 'RazorPagesMovie'. Add
+them?"。选择Yes。一个包含<em>launch.json</em>和<em>tasks.json</em>文件的<em>.vscode</em>目录会添加到项目的根目录下</p></li>
+</ul>
+<h2 id="运行应用">运行应用</h2>
+<ul>
+<li>运行下列命令，信任HTTPS开发证书： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dotnet dev-certs https --trust</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>上面的命令在Linux上无法使用。参考所使用的Linux版本的文档以了解如何信任证书。
+- 如果你同意信任开发证书，那么就选择Yes <img
+src="https://raw.githubusercontent.com/glfruit/pic_bed/master/20191228091140.png" /></p>
+<p>参见<a
+href="https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-3.1#trust-the-aspnet-core-https-development-certificate-on-windows-and-macos">Trust
+the ASP.NET Core HTTPS开发证书</a>以了解更多信息。 -
+按<strong>Ctrl-F5</strong>，以非调试模式运行应用 Visual Studio
+Code会启动<a
+href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1">Kestrel</a>，运行浏览器，导航到<em>http://localhost:5001</em>。</p>
+<h2 id="检查项目文件">检查项目文件</h2>
+<p>下面对主要项目文件夹和文件进行概览，你在后面的教程中将会用到。 ###
+Pages文件夹 包含了Razor页面和支持文件。每个Razor页面都由两个文件组成： -
+一个.cshtml文件，包含HTML标记以及使用Razor语法的C#代码 -
+一个.cshtml.cs文件，包含处理页面事件的C#代码</p>
+<p>支持文件的名字以下划线开头。例如，*_Layout.cshtml*文件配置对所有页面都通用的UI元素。这个文件设置页面顶部的导航菜单以及页面底部的版权声明，参见<a
+href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/layout?view=aspnetcore-3.1">Layout
+in ASP.NET Core</a>。</p>
+<h3 id="wwwroot文件夹">wwwroot文件夹</h3>
+<p>包含静态文件，例如HTML文件，JavaScript文件和CSS文件。参见<a
+href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-3.1">Static
+files in ASP.NET Core</a>以了解更多信息。</p>
+<h3 id="appsettings.json">appSettings.json</h3>
+<p>包含配置数据，例如连接字符串。参见<a
+href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1">Configuration
+in ASP.NET Core</a>以了解更多信息。</p>
+<h3 id="program.cs">Program.cs</h3>
+<p>包含程序的入口点。参见<a
+href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1">.NET
+Generic Host</a>以了解更多信息。</p>
+<h3 id="startup.cs">Startup.cs</h3>
+<p>包含配置应用行为的代码。参见<a
+href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.1">App
+startup in ASP.NET Core</a>以了解更多信息。</p>
+<h2 id="下一步">下一步</h2>
+<p>进入到本系列的下一个教程： <a
+href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model?view=aspnetcore-3.1">添加模型</a></p>
+]]></content>
+      <tags>
+        <tag>DotNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>忘记设定目标，专注于此</title>
+    <url>/2021/07/14/forget-about-setting-goals/</url>
+    <content><![CDATA[<p><em>本篇文章是<a
+href="http://glfruit.me/2017/03/19/forget-about-setting-goals/">忘掉设置目标，专注于此</a>的更新版，因为原文作者改动较大，所以干脆重新翻译另作一篇，以资对照</em>。</p>
+<p>人们普遍认为实现我们想要的生活——身材更好、创建一家成功的企业、更加放松而又更少忧虑以及花更多时间和朋友以及家人在一起——的最好方法就是设定具体的、可操作的目标。</p>
+<p>多年以来，这也是我养成习惯的方式。每一个习惯都是一个要达到的目标。我为想在学校取得的成绩设置目标，为想要在健身房举起的重量设置目标，为想要在生意中赚取的利润设置目标。我实现了几个目标，但是许多目标都没有达到。最终我开始认识到我取得的结果和我所设定的目标关系不大，但是却和我所遵循的系统密切相关。
+<span id="more"></span></p>
+<p>如果你是一个教练，你的目标可能是赢得冠军。你的系统就是你招募运动员、管理助理教练以及进行训练的方式。</p>
+<p>如果你是一个企业家，你的目标可能是创建一门百万美元的生意。你的系统就是你如何测试产品创意、雇佣人员以及开展营销活动的方式。</p>
+<p>如果你是一个音乐家，你的目标可能是演奏一首新曲子。你的系统就是你练习的频率、分解和解决困难的措施以及从教练那里接收反馈的方法。</p>
+<p><img
+src="https://picbed-1254819274.cos.ap-guangzhou.myqcloud.com/2021/07/14/systemsvsgoals.jpg" /></p>
+<p>忘掉设定目标，而是专注于你的系统。</p>
+<p>现在有一个有趣的问题：如果你完全忽略了你的目标，只关注你的系统，你仍然能成功吗？例如，如果你是一个篮球教练，忽略了赢得冠军的目标，只关注你的球队每天的训练内容，你仍然能得到结果吗？</p>
+<p>我认为你可以。</p>
+<p>任何运动的目标都是以最好成绩完成比赛，但是整场比赛只是盯着记分板看的话将是非常荒谬的事情。真正获胜的唯一途径就是每天变得更好。用三次超级碗得主Bill
+Walsh的话来说就是，“比分会照顾好自己“。生活中的其它领域也是如此。如果你想要更好的结果，那么就忘记设定目标。专注于你的系统。</p>
+<p>我这样说是什么意思呢？目标完全没用吗？当然不是。目标适合于设定方向，但是系统最适合帮助取得进展。当你花太多的时间思考目标而没有花足够的时间设计自己的系统的话，许多问题就出现了。</p>
+<h2 id="问题1-赢家和输家都有相同的目标">问题1:
+赢家和输家都有相同的目标</h2>
+<p>设定目标会受到幸存者偏差的严重影响。我们关注最终胜利的人——幸存者——而错误地假设雄心勃勃的目标导致了他们的成功，而忽略了那些拥有相同目标但是没有成功的人。</p>
+<p>每个奥运会选手都想赢得金牌。每个候选人都想得到它。如果成功者和失败者都有相同的目标，那么目标不可能将赢家与输家区分开来。将英国自行车运动员推向这项运动顶峰的并不是获得环法自行车赛的目标。我们可以推测，他们以前每年都想赢得比赛——就像其它每个职业队伍一样。目标一直就在那里。只有当他们实施了一个持续小幅改进的系统的时候，他们才取得了不同的结果。</p>
+<h2 id="问题2-达到目标只是一时的改变">问题2: 达到目标只是一时的改变</h2>
+<p>想象你有一间乱糟糟的房间，你的目标是清理它。如果你聚集能量来打扫，那么你将会有一间干净的房间——暂时。但是如果你仍保持着那种草率的、囤积东西的习惯，那么房间又会变得凌乱不堪，你很快又会看见一堆新的杂物，并希望再次激发出动力。因为你从没有改变导致结果后面的系统，所以你总是追求着相同的结果。你治愈了症状，但是没有解决原因。</p>
+<p>达到目标只是暂时改变了你的生活。这违背了我们关于改进的直觉。我们认为我们需要改变我们的结果，但是结果并不是问题。我们真正需要改变的是导致那些结果的系统。当你在结果层面解决问题的时候，你只是暂时解决了它们。要永久提高，你需要在系统层面解决问题。修复输入，输出自己就会修复。</p>
+<h2 id="问题3-目标限制了你的幸福">问题3: 目标限制了你的幸福</h2>
+<p>任何目标后面暗含的假设是：一旦我达到我的目标，那么我就会幸福。目标至上心态的问题在于，你不断地将幸福推迟到下一个里程碑。我已经数不清多少次陷入这个陷阱了。许多年以来，幸福总是未来的我才享受的东西。我曾向自己保证，一旦增重20磅肌肉或者我的业务能够登上纽约时报，那么我就终于能够放松了。</p>
+<p>此外，目标会引起“非此即彼”的冲突：要么达到目标而成功，要么失败而失望。你在心理上将自己装进了一个狭隘的幸福观中。这是有误导性的。你在生命中实际走过的路途不太可能和你出发时心里所想的旅程完全一致。通向成功有多条路径，将自己的满意限制在一种场景中是毫无意义的。</p>
+<p>系统优先的心态为此提供了解药。当你爱上过程而不是产品的时候，你无需等待让自己快乐。在你的系统运行的任何时候你都能感到满足。系统成功的形式有多种，不仅仅是你最初设想的那种。</p>
+<h2 id="问题4-目标与长期进展冲突">问题4: 目标与长期进展冲突</h2>
+<p>最后，以目标为导向的心态可能会引起“溜溜球”效果。许多跑步者会数月努力锻炼，但是当他们越过终点线之后，他们就停止训练了。竞赛不再能激励他们了。当你所有的努力都聚焦于一个特定的目标时，在你实现它之后还有什么推动你前进呢？这就是为什么许多人发现在实现目标后又回到原有习惯的原因。</p>
+<p>设定目标的目的是为了赢得比赛。构建系统的目的是能够持续比赛。真正的长期思考是不考虑目标的思考。它无关于任何成就。它是关于无尽细化和持续改进的循环。最终，你对流程的坚持决定了你的进步。</p>
+<h2 id="爱上系统">爱上系统</h2>
+<p>以上所说的并不意味着目标是无用的。但是，我发现目标很适合规划进度，而系统很适合实际取得进展。</p>
+<p>目标能够提供方向，甚至在短期内推动着你前进，但是最终一个经过良好设计的系统总是会胜出。拥有一个系统是最关键的。坚持这个过程才是差别所在。</p>
+<p>本文是纽约时报畅销书籍《微习惯》第1章的节选。</p>
+]]></content>
+      <categories>
+        <category>个人成长</category>
+      </categories>
+      <tags>
+        <tag>个人管理</tag>
+        <tag>目标管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>腾讯云上Hexo博客搭建备忘录</title>
+    <url>/2022/01/01/migration-log/</url>
+    <content><![CDATA[<p>这（暂时）算不上一篇完整的文章，我没有时间在今天完成它，然而又有一股要在新年的第一天发一篇文章的执念，特别这是在腾讯云上建站后的第一篇文章，多少对我而言有点纪念意义，所以无论如何先草草写两句，占个位置，然后再逐步修改完善吧。
+<span id="more"></span></p>
+<p>在腾讯上搭建Hexo博客总的来说还是比较简单的，主要分为以下几个步骤：</p>
+<ol type="1">
+<li>安装配置Nginx</li>
+<li>安装配置Git</li>
+<li>安装配置Hexo博客仓库</li>
+<li>配置部署信息</li>
+<li>安装SSL证书</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数字生活</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>腾讯云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代码畅游必备工具-在Debian上安装配置OpenGrok</title>
+    <url>/2020/01/09/swim-in-code-with-opengrok/</url>
+    <content><![CDATA[<p>最近打算好好研究一下微软给出的微服务架构示例项目<a
+href="https://github.com/dotnet-architecture/eShopOnContainers">eShopOnContainers</a>，需要一个方便的源代码浏览工具，自然而言地想到了用<a
+href="https://oracle.github.io/opengrok/">OpenGrok</a>来进行。原来安装配置过，但是没有做记录，这么久了也忘记怎么做了，又从头折腾了一遍，为了备忘，将安装配置的过程记录下来。</p>
+<h2 id="基本环境">基本环境</h2>
+<ul>
+<li>Debian 10.1.0(buster)</li>
+<li>JDK 11</li>
+<li>Tomcat 9</li>
+<li><a
+href="https://github.com/universal-ctags">universal-ctags</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="安装步骤">安装步骤</h2>
+<ol type="1">
+<li>安装JDK 11</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install openjdk-11-jdk</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>安装Tomcat 9</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install tomcat9</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>安装universal-ctags</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install universal-ctags</span><br></pre></td></tr></table></figure>
+<ol start="4" type="1">
+<li>在OpenGrok的<a
+href="https://github.com/oracle/opengrok/releases">下载页面</a>下载最新版本（目前是1.3.6）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/oracle/opengrok/releases/download/1.3.6/opengrok-1.3.6.tar.gz</span><br></pre></td></tr></table></figure>
+<ol start="5" type="1">
+<li>将下载的文件解压至<em>/opt/opengrok</em>目录</li>
+<li>将<em>source.war</em>部署志Tomcat</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /opt/opengrok/lib/source.war /var/lib/tomcat9/webapps</span><br></pre></td></tr></table></figure>
+<ol start="7" type="1">
+<li>源码目录和索引目录默认存放在/var/opengrok下，新建下列文件夹</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /var/opengrok/data</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/opengrok/src</span><br><span class="line"><span class="built_in">mkdir</span> -p /var/opengrok/etc</span><br></pre></td></tr></table></figure>
+<ol start="8" type="1">
+<li>将想阅读的源代码放在<em>src</em>目录下，例如eShopOnContainers</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/opengrok/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/dotnet-architecture/eShopOnContainers.git</span><br></pre></td></tr></table></figure>
+<ol start="9" type="1">
+<li>配置默认日志配置</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> /opt/opengrok/doc/logging.properties /var/opengrok/logging.properties</span><br></pre></td></tr></table></figure>
+<ol start="10" type="1">
+<li>生成源代码的索引</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -Djava.util.logging.config.file=/var/opengrok/logging.properties \</span><br><span class="line">  -jar /opt/opengrok/lib/opengrok.jar \</span><br><span class="line">  -c /usr/bin/ctags-universal \</span><br><span class="line">  -s /var/opengrok/src -d /var/opengrok/data -H -P -S -G \</span><br><span class="line">  -W /var/opengrok/etc/configuration.xml -U http://localhost:8080</span><br></pre></td></tr></table></figure>
+<ol start="11" type="1">
+<li>访问<strong>http://localhost:8080/source</strong>，即可看到源代码
+<img
+src="https://raw.githubusercontent.com/glfruit/pic_bed/master/20200109205025.png" /></li>
+</ol>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li><a
+href="http://panqiincs.me/2018/12/31/how-to-setup-opengrok/">OpenGrok安装和配置</a></li>
+<li><a href="https://github.com/oracle/opengrok/issues/2635">SEVERE:
+Couldn't notify the webapp on https://.... HTTP 401 Unauthorized
+#2635</a></li>
+<li><a
+href="https://gist.github.com/vineelkovvuri/a6ca0def344e04b8293d">Installing
+opengrok in linux · GitHub</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术研究</category>
+      </categories>
+  </entry>
+</search>
