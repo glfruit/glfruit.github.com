@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"glfruit.me","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Clojure的基本理念 原文地址 客户和相关人员都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活性及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要面对使用原生线程和加锁处理并发时所持续不断出现的问题。Clojure就是在这样一种背景下所做出的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clojure的基本理念">
+<meta property="og:url" content="http://glfruit.me/2012/01/05/clojure/index.html">
+<meta property="og:site_name" content="天地一沙鸥">
+<meta property="og:description" content="Clojure的基本理念 原文地址 客户和相关人员都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活性及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要面对使用原生线程和加锁处理并发时所持续不断出现的问题。Clojure就是在这样一种背景下所做出的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2012-01-05T06:29:00.000Z">
+<meta property="article:modified_time" content="2024-12-20T09:44:26.785Z">
+<meta property="article:author" content="Fruit Lee">
+<meta property="article:tag" content="Clojure">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://glfruit.me/2012/01/05/clojure/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://glfruit.me/2012/01/05/clojure/","path":"2012/01/05/clojure/","title":"Clojure的基本理念"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Clojure的基本理念 | 天地一沙鸥</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54350097-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-54350097-1","only_pageview":false,"measure_protocol_api_secret":null,"baidu_analytics":"93104e8512a96dc3d4343e12f55f7f0a"}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天地一沙鸥</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just For Fun</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#clojure%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%90%86%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">Clojure的基本理念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%9C%89clojure"><span class="nav-number">2.</span> <span class="nav-text">为什么会有Clojure？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lisp%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF"><span class="nav-number">3.</span> <span class="nav-text">Lisp是个好东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF"><span class="nav-number">4.</span> <span class="nav-text">函数式编程是个好东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E5%92%8C%E5%B9%B3%E5%8F%B0"><span class="nav-number">5.</span> <span class="nav-text">语言和平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oo%E8%A2%AB%E9%AB%98%E4%BC%B0%E4%BA%86"><span class="nav-number">6.</span> <span class="nav-text">OO被高估了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF"><span class="nav-number">7.</span> <span class="nav-text">多态是个好东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%8F%8A%E5%A4%9A%E6%A0%B8%E6%9C%AA%E6%9D%A5"><span class="nav-number">8.</span> <span class="nav-text">并发及多核未来</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fruit Lee"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Fruit Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/glfruit" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;glfruit" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:glfruit@qq.com" title="E-Mail → mailto:glfruit@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005053230781654/home" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005053230781654&#x2F;home" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://glfruit.me/2012/01/05/clojure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Fruit Lee">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天地一沙鸥">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Clojure的基本理念 | 天地一沙鸥">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Clojure的基本理念
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2012-01-05 14:29:00" itemprop="dateCreated datePublished" datetime="2012-01-05T14:29:00+08:00">2012-01-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-20 17:44:26" itemprop="dateModified" datetime="2024-12-20T17:44:26+08:00">2024-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" itemprop="url" rel="index"><span itemprop="name">技术研究</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="clojure的基本理念">Clojure的基本理念</h2>
+<p><a href="https://clojure.org/about/rationale">原文地址</a>
+客户和相关人员都对诸如JVM这样的行业标准平台的性能、安全性以及稳定性进行了大量投资，并且对其感到满意。虽然Java开发者可能会对动态语言的简洁、灵活性及生产力感到嫉妒，但是他们要考虑在客户允许的基础结构上运行、访问已有的代码库以及性能等方面的问题。除此之外，他们还要面对使用原生线程和加锁处理并发时所持续不断出现的问题。Clojure就是在这样一种背景下所做出的实用动态语言设计的努力。它致力于成为一种Java所适用的那些领域中的通用语言。它反映出这样一个现实，对于将来的并发编程来说，现在普遍存在的、不受约束的状态变化必然会消失。</p>
+<p>Clojure通过以下几点来达到它的目的：</p>
+<ul>
+<li>拥抱行业标准的开放平台——JVM</li>
+<li>对一门值得尊敬的语言——Lisp进行现代化改造</li>
+<li>通过不变的持久化数据结构来促进函数式编程</li>
+<li>通过软件事务内存和异步代理提供内建的并发支持</li>
+</ul>
+<p>我们最终得到的是一门健壮、实用而快速的语言。</p>
+<p>Clojure对于状态和同一性采取了一种与众不同的方式。</p>
+<h2 id="为什么会有clojure">为什么会有Clojure？</h2>
+<p>我为什么还要再编写一门程序语言？大体而言，因为我想要：</p>
+<ul>
+<li>一种Lisp</li>
+<li>函数式编程</li>
+<li>与已稳固建立的平台共生</li>
+<li>为并发而设计</li>
+</ul>
+<p>但是我却没有找到这样一种语言。下面是对Clojure背后的一些动机的概述：</p>
+<h2 id="lisp是个好东西">Lisp是个好东西</h2>
+<ul>
+<li>经常被模仿/洗劫，但是仍未被复制</li>
+<li>Lambda演算产生出一个非常小的核心</li>
+<li>几乎没有语法</li>
+<li>核心优势仍然是代码即数据以及语法抽象</li>
+<li>标准的Lisp（Common Lisp和Scheme）的状况
+<ul>
+<li>标准化之后缓慢/没有革新</li>
+<li>核心的数据结构是可变的，并且不可扩展</li>
+<li>规范中没有涉及到并发</li>
+<li>JVM上已经有了良好的实现（ABCL，Kawa，SISC等）</li>
+<li>标准的Lisp自身即是一个平台</li>
+</ul></li>
+<li>Clojure是一种没有向后兼容性约束的Lisp
+<ul>
+<li>将“代码即数据”的范式推广到了map和vector</li>
+<li>默认数据是不可改变的</li>
+<li>核心的数据结构是可扩展的抽象</li>
+<li>拥抱平台（JVM）</li>
+</ul></li>
+</ul>
+<h2 id="函数式编程是个好东西">函数式编程是个好东西</h2>
+<ul>
+<li>数据不可变+函数为一等“公民”</li>
+<li>总是能够根据行规/惯例用Lisp完成
+<ul>
+<li>但是如果数据结构是可变的，那么假设数据不会被改变是很危险的事情</li>
+<li>在传统的Lisp中，只有list数据结构在结构上才是可递归的</li>
+</ul></li>
+<li>纯粹的函数式语言总是倾向于强静态类型
+<ul>
+<li>并非对每个人、每个任务都合适</li>
+</ul></li>
+<li>Clojure是一种强调动态性的函数式语言
+<ul>
+<li>所有的数据都不可变&amp;可持久化，且支持递归</li>
+<li>不同类型的集合、返回类型</li>
+<li>动态的多态</li>
+</ul></li>
+</ul>
+<h2 id="语言和平台">语言和平台</h2>
+<ul>
+<li>虚拟机，而不是操作系统，才是未来的平台，它提供了：
+<ul>
+<li>类型系统
+<ul>
+<li>动态执行和安全性</li>
+</ul></li>
+<li>库
+<ul>
+<li>抽象了OS</li>
+<li>大量的工具</li>
+<li>内建和第三方</li>
+</ul></li>
+<li>内存及其它资源管理
+<ul>
+<li>GC是一个平台，而不是语言、工具</li>
+</ul></li>
+<li>字节码+JIT编译
+<ul>
+<li>硬件抽象</li>
+</ul></li>
+</ul></li>
+<li>语言即平台 vs 语言+平台
+<ul>
+<li>老的方式——每种语言定义自己的运行时
+<ul>
+<li>GC、字节码、类型系统、库等</li>
+</ul></li>
+<li>新的方式（JVM，.NET）
+<ul>
+<li>独立于语言的通用运行时</li>
+</ul></li>
+</ul></li>
+<li>为平台构建的语言 vs 移植到平台的语言
+<ul>
+<li>许多新的语言仍然采用“语言即平台”的方式</li>
+<li>移植时存在着平台到平台的问题
+<ul>
+<li>内存管理、类型系统、线程问题</li>
+<li>重复的库</li>
+<li>如果原来的语言基于C的话，一些用C写的扩展库并未移植过来</li>
+</ul></li>
+</ul></li>
+<li>平台是由客户指定的
+<ul>
+<li>必须运行在JVM或.NET上 vs 必须运行在Unix或Windows上</li>
+<li>JVM已经建立了追踪记录和信任级别
+<ul>
+<li>现在也已经开源了</li>
+</ul></li>
+<li>需要和其它代码交互
+<ul>
+<li>现在光有C的连接是不够的</li>
+</ul></li>
+</ul></li>
+<li>Java/JVM是语言+平台
+<ul>
+<li>JVM</li>
+<li>Java单调乏味，表达力也不够
+<ul>
+<li>函数不是一等公民，缺乏类型推断等</li>
+</ul></li>
+<li>调用/使用Java的能力至关重要</li>
+</ul></li>
+<li>Clojure是语言，JVM是平台</li>
+</ul>
+<h2 id="oo被高估了">OO被高估了</h2>
+<ul>
+<li>起源于模仿，如今用在每个地方，即使并不合适也在用
+<ul>
+<li>由于Java/C#缺乏对其它功能的（惯用的）支持，因此OO受到了它们的鼓励</li>
+</ul></li>
+<li>状态可变的对象成了新的意大利面条式代码
+<ul>
+<li>难于理解、测试和推理</li>
+<li>并发灾难</li>
+</ul></li>
+<li>继承<strong>不是</strong>实现多态的唯一方式</li>
+<li>“让100个函数操作一个数据结构要比让10个函数操作10个数据结构好“——Alan
+J. Perlis</li>
+<li>Clojure将数据结构建模为由接口表示的不可变对象，不另外提供自己的类系统</li>
+<li>在少数几个主要数据结构（seq、map、vector和set）上定义了许多函数</li>
+<li>使用Java编写Java，从Clojure使用和扩展Java</li>
+</ul>
+<h2 id="多态是个好东西">多态是个好东西</h2>
+<ul>
+<li>Switch语句、结构匹配等导致脆弱的系统</li>
+<li>多态可以带来灵活的、可扩展的系统</li>
+<li>Clojure的多方法机制将多态与OO和类型分离开来
+<ul>
+<li>支持多种分类方法</li>
+<li>通过静态、动态、外部属性、元数据等方式进行派发</li>
+</ul></li>
+</ul>
+<h2 id="并发及多核未来">并发及多核未来</h2>
+<ul>
+<li>不变性让许多问题都消失了
+<ul>
+<li>在线程间自由共享</li>
+</ul></li>
+<li>对于模拟和程序与外部世界之间的代理来说，状态改变是一个现实</li>
+<li>上锁（locking）非常困难，不可能每次都能正确实现</li>
+<li>Clojure的软件事务内存（software transaction
+memory）和代理系统（agent system）解决了困难的地方</li>
+</ul>
+<p>简而言之，我认为Clojure作为JVM上一种对并发有很强支持的、能够实际运行的Lisp占据了一个独特的位置。看看Clojure的一些<a
+href="https://clojure.org/about/features">特点</a>或者<a
+href="https://clojure.org/guides/getting_started">开始使用Clojure</a>。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Clojure/" rel="tag"># Clojure</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/01/03/hello2012/" rel="prev" title="你好，2012！">
+                  <i class="fa fa-angle-left"></i> 你好，2012！
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2012/01/20/jdeeemacs24/" rel="next" title="终于让JDEE在Emacs 24上跑起来了">
+                  终于让JDEE在Emacs 24上跑起来了 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2021179087号 </a>
+      <img src="/images/beian.png" alt=""><a href="https://beian.mps.gov.cn/#/query/webSearch?code=44180202000677" rel="noopener" target="_blank">粤公网安备 44180202000677号 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Fruit Lee</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","mhchem":false,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+</html>

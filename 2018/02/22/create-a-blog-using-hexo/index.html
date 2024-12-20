@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"glfruit.me","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="更新日志 2018年3月1日：添加不蒜子统计和Google分析配置 Hexo是一个老牌的博客写作与管理工具，我从Jekyll迁移到Hexo也有五六年的时间了，虽然博客没写几篇（写作也是个体力活啊），但是断断续续也在维护，只是开始用Hexo时还是2.x的版本，后来升级到3.x版本，使用过程中始终有些小问题，而且因为我有多台电脑，如何在多台电脑之间维护管理博客也是一个问题，一直没有认真去解决，这次趁着">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo创建博客站点">
+<meta property="og:url" content="http://glfruit.me/2018/02/22/create-a-blog-using-hexo/index.html">
+<meta property="og:site_name" content="天地一沙鸥">
+<meta property="og:description" content="更新日志 2018年3月1日：添加不蒜子统计和Google分析配置 Hexo是一个老牌的博客写作与管理工具，我从Jekyll迁移到Hexo也有五六年的时间了，虽然博客没写几篇（写作也是个体力活啊），但是断断续续也在维护，只是开始用Hexo时还是2.x的版本，后来升级到3.x版本，使用过程中始终有些小问题，而且因为我有多台电脑，如何在多台电脑之间维护管理博客也是一个问题，一直没有认真去解决，这次趁着">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-02-21T23:10:28.000Z">
+<meta property="article:modified_time" content="2024-12-20T09:44:26.787Z">
+<meta property="article:author" content="Fruit Lee">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://glfruit.me/2018/02/22/create-a-blog-using-hexo/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://glfruit.me/2018/02/22/create-a-blog-using-hexo/","path":"2018/02/22/create-a-blog-using-hexo/","title":"使用Hexo创建博客站点"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用Hexo创建博客站点 | 天地一沙鸥</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54350097-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-54350097-1","only_pageview":false,"measure_protocol_api_secret":null,"baidu_analytics":"93104e8512a96dc3d4343e12f55f7f0a"}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">天地一沙鸥</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just For Fun</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">基本安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">hexo的安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AB%99%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">创建博客站点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAgit%E4%BB%93%E5%BA%93"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">基本配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">主题的安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0gitpages"><span class="nav-number">1.4.</span> <span class="nav-text">部署到GitPages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E8%84%91%E4%B9%8B%E9%97%B4%E7%9A%84%E5%90%8C%E6%AD%A5"><span class="nav-number">1.5.</span> <span class="nav-text">电脑之间的同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">常用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E8%92%9C%E5%AD%90%E7%BB%9F%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">不蒜子统计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fruit Lee"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Fruit Lee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/glfruit" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;glfruit" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:glfruit@qq.com" title="E-Mail → mailto:glfruit@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005053230781654/home" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005053230781654&#x2F;home" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://glfruit.me/2018/02/22/create-a-blog-using-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Fruit Lee">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="天地一沙鸥">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用Hexo创建博客站点 | 天地一沙鸥">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用Hexo创建博客站点
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-02-22 07:10:28" itemprop="dateCreated datePublished" datetime="2018-02-22T07:10:28+08:00">2018-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-20 17:44:26" itemprop="dateModified" datetime="2024-12-20T17:44:26+08:00">2024-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%97%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">数字生活</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><strong>更新日志</strong>
+<em>2018年3月1日：添加不蒜子统计和Google分析配置</em></p>
+<p><a
+href="https://hexo.io">Hexo</a>是一个老牌的博客写作与管理工具，我从<a
+href="https://github.com/mojombo/jekyll">Jekyll</a>迁移到<a
+href="https://hexo.io">Hexo</a>也有五六年的时间了，虽然博客没写几篇（写作也是个体力活啊），但是断断续续也在维护，只是开始用<a
+href="https://hexo.io">Hexo</a>时还是2.x的版本，后来升级到3.x版本，使用过程中始终有些小问题，而且因为我有多台电脑，如何在多台电脑之间维护管理博客也是一个问题，一直没有认真去解决，这次趁着春节放假，离上班还有几天时间，就把整个博客仓库清理了一遍，把遗留的问题也都解决了，把整个过程记录下来，以做备忘。
+<span id="more"></span></p>
+<h2 id="基本安装和配置">基本安装和配置</h2>
+<h3 id="hexo的安装和配置">hexo的安装和配置</h3>
+<p><a
+href="https://hexo.io">Hexo</a>自身的安装其实很简单，一行命令就完成了：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure> 但是在运行这行命令之前还必须安装<a
+href="https://hexo.io">Hexo</a>所依赖的两个工具： <a
+href="https://nodejs.org">Node.js</a> <a
+href="https://git-scm.com">Git</a> 这些工具以及<a
+href="https://hexo.io">Hexo</a>的基本安装在H<a
+href="https://hexo.io/zh-tw/docs/">官方文档</a>里已经说得很详细了，这里也就不再赘述了。</p>
+<h3 id="创建博客站点">创建博客站点</h3>
+<h4 id="创建git仓库">创建Git仓库</h4>
+<p>其实这一步不是必须的，但是出于备份（谁也不想自己辛辛苦苦写的东西一夜之间就没了）和同步（需要在多台电脑写作和同步博客内容及配置的话，这种情况现在并不少见）的考虑，我们最好还是使用版本控制工具将所写的内容和<a
+href="https://hexo.io">Hexo</a>的配置管理起来。由于一般使用<a
+href="https://hexo.io">Hexo</a>的话都会将博客部署到<a
+href="https://pages.github.com/">GitHub
+Pages</a>，所以我们这里选择使用<a
+href="https://github.com">GitHub</a>来托管我们的博客内容。 首先要在<a
+href="https://github.com">GitHub</a>上创建一个xxx.github.io的仓库（这里xxx为你的GitHub用户名，如果没有GitHub账户的话就自己注册一个）；
+然后在本地检出这个仓库： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/xxx/xxx.github.io</span><br><span class="line">cd xxx.github.io</span><br></pre></td></tr></table></figure> 现在这还是一个空仓库，通过运行
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+可以看到现在只有一个master分支，我们不对这个分支进行任何修改，而是新创建一个分支，例如叫做hexo：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hexo</span><br></pre></td></tr></table></figure>
+这样就创建并切换到了新的hexo分支，我们的站点配置管理和博客写作都将在这个分支上进行。博客目录下会有一个隐藏的叫做.git的文件夹，我们先将其移动到其它地方。</p>
+<h4 id="初始化">初始化</h4>
+<p>进入博客目录，并使用Hexo进行初始化： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd xxx.github.io</span><br><span class="line">hexo init</span><br><span class="line">hexo install</span><br></pre></td></tr></table></figure></p>
+<h4 id="基本配置">基本配置</h4>
+<p>打开_config.yml文件，根据自己的情况修改以下几项： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: A Blog # 博客站点的名称</span><br><span class="line">subtitle: Blog Subtitle # 博客站点的副标题</span><br><span class="line">description:</span><br><span class="line">author: Somebody # 作者名称</span><br><span class="line">language: zh-CN # 站点语言</span><br><span class="line">timezone: Asia/Shanghai # 时区</span><br></pre></td></tr></table></figure> 运行
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure> 使用浏览器访问 http://localhost:4000
+应该就能看到博客的首页了。</p>
+<h3 id="主题的安装和配置">主题的安装和配置</h3>
+<p>选择一个自己喜欢的主题，我选择的主题是<a
+href="https://theme-next.org/">next</a>，下面以这个主题为例来描述如何安装和配置主题。
+首先将前面移走的.git目录移回博客目录下，这样博客目录里面的内容才会被Git管理起来；
+然后访问选定主题的GitHub页面，将其fork到自己的账户下；
+第三步将主题的git仓库fork到自己的账户下： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/theme-next/hexo-theme-next.git</span><br></pre></td></tr></table></figure>
+打开博客目录下的_config.yml文件，修改下面一行： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: my-next</span><br></pre></td></tr></table></figure></p>
+<p>【注】: 关于如何Fork以及同步Fork，请参考<a
+href="https://help.github.com/articles/fork-a-repo/">Fork A Repo</a></p>
+<h3 id="部署到gitpages">部署到GitPages</h3>
+<p>用 <a
+href="https://hexo.io">Hexo</a>创建的博客可以有多种部署方式，最常见的就是部署到GitPages，免费又好用。要部署到GitPages，我们需要完成以下几个步骤：
+1.
+在source目录下创建一个名为CNAME的文件，在里面加入自己注册好的域名，例如example.domain，然后通过
+<a
+href="https://www.dnsprod.cn">DNSPod</a>之类的DNS解析服务商将域名解析道对应的GitPages地址。
+2. 安装git部署器，以便部署到github <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure> 3.
+将博客部署到GitPages: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<h3 id="电脑之间的同步">电脑之间的同步</h3>
+<p>如果新电脑上还没有检出博客，则先执行检出操作并切换到hexo分支并进行更新：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout https://www.github.com/xxx/xxx.github.io</span><br><span class="line">git fetch</span><br><span class="line">git checkout hexo</span><br><span class="line">git submodule update --init</span><br><span class="line">npm install --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>如果已经检出了博客，则直接运行更新命令即可： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git submodule update</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用插件">常用插件</h2>
+<h3 id="不蒜子统计">不蒜子统计</h3>
+<p>不蒜子是一个可以统计站点和页面访问量的工具，在最新的next主题中的配置相当简单，只需要打开主题的_config.yml文件，找到busuanzi_count，将enable设置为即可。如果还需要站点的UV数，直接在busuanzi_count下面添加如下配置即可：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site_uv: true</span><br><span class="line">site_uv_header: 本站访客数</span><br><span class="line">site_uv_footer: 人次</span><br></pre></td></tr></table></figure></p>
+<p>设置站点的PV数： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">site_pv: true</span><br><span class="line">site_pv_header: 本站总访问量</span><br><span class="line">site_pv_footer: 次</span><br></pre></td></tr></table></figure></p>
+<p>设置单页面的PV数： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page_pv: true</span><br><span class="line">page_pv_header: 本文总阅读量</span><br><span class="line">page_pv_footer: 次</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li><a href="https://segmentfault.com/a/1190000011535121">Github pages +
+hexo博客搭建教程</a></li>
+<li><a
+href="http://fenglu.me/2016/08/12/How-to-setup-a-hexo-based-blog-Part-2/">How
+to setup a hexo-based blog: Part 2</a></li>
+<li><a
+href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html">打造个性超赞博客Hexo+NexT+GithubPages的超深度优化</a></li>
+<li><a
+href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">Using
+a custom domain with GitHub Pages</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/03/19/forget-about-setting-goals/" rel="prev" title="忘掉设置目标，专注于此">
+                  <i class="fa fa-angle-left"></i> 忘掉设置目标，专注于此
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/04/razor-pages-tutorial-1/" rel="next" title="ASP.NET Core Razor Pages入门（一）">
+                  ASP.NET Core Razor Pages入门（一） <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2021179087号 </a>
+      <img src="/images/beian.png" alt=""><a href="https://beian.mps.gov.cn/#/query/webSearch?code=44180202000677" rel="noopener" target="_blank">粤公网安备 44180202000677号 </a>
+  </div>
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Fruit Lee</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","mhchem":false,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</body>
+</html>
